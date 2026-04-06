@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Function</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Functions</h1>
+
+<div class="question">
+    <p>Q1: Write a C++ method to find the smallest number among three numbers.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int smallest(int a, int b, int c) {
+    int min = a;
+    if (b < min) min = b;
+    if (c < min) min = c;
+    return min;
+}
+
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
+    cout << "Smallest: " << smallest(a, b, c);
+    return 0;
+}
+
+OUTPUT:
+2 3 4
+Smallest: 2
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q2: Write a C++ method to compute the average of three numbers.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+double average(int a, int b, int c) {
+    return (a + b + c) / 3.0;
+}
+
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
+    cout << "Average: " << average(a, b, c);
+    return 0;
+}
+
+OUTPUT:
+2 3 4
+Average: 3
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q3: Write a C++ method to display the middle character of a string.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+void middleChar(string str) {
+    int len = str.length();
+    if (len % 2 == 0)
+        cout << str[len/2 - 1] << str[len/2];
+    else
+        cout << str[len/2];
+}
+
+int main() {
+    string str;
+    cin >> str;
+    middleChar(str);
+    return 0;
+}
+
+OUTPUT:
+hola
+ol
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q4:Write a C++ method to find all twin prime numbers less than 100.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+bool isPrime(int n) {
+    if (n < 2) return false;
+    for (int i = 2; i <= n/2; i++)
+        if (n % i == 0) return false;
+    return true;
+}
+
+void twinPrimes() {
+    for (int i = 2; i < 100; i++) {
+        if (isPrime(i) && isPrime(i + 2))
+            cout << "(" << i << ", " << i + 2 << ")\n";
+    }
+}
+
+int main() {
+    twinPrimes();
+    return 0;
+}
+
+OUTPUT:
+(3, 5)
+(5, 7)
+(11, 13)
+(17, 19)
+(29, 31)
+(41, 43)
+(59, 61)
+(71, 73)
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q5:Write a C++ method to count the number of digits in an integer with the value 2. The integer may be assumed to be non-negative.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int countTwos(int n) {
+    int count = 0;
+    while (n > 0) {
+        if (n % 10 == 2)
+            count++;
+        n /= 10;
+    }
+    return count;
+}
+
+int main() {
+    int num;
+    cin >> num;
+    cout << "Count of 2s: " << countTwos(num);
+    return 0;
+}
+
+OUTPUT:
+2   
+Count of 2s: 1
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q6:Write a C++ method that accepts three integers and checks whether they are consecutive or not. Returns true or false.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+#include <algorithm>
+using namespace std;
+
+bool areConsecutive(int a, int b, int c) {
+    int arr[3] = {a, b, c};
+    sort(arr, arr + 3);
+    return (arr[1] == arr[0] + 1 && arr[2] == arr[1] + 1);
+}
+
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    if (areConsecutive(a, b, c))
+        cout << "Consecutive";
+    else
+        cout << "Not consecutive";
+
+    return 0;
+}
+
+OUTPUT:
+3 4 5
+Consecutive
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q7:Write a C++ method that checks whether all the characters in a given string are vowels (a,e,i,o,u) or not. Return true if each character in the string is a vowel, otherwise return false.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+bool allVowels(string str) {
+    for (int i = 0; i < str.length(); i++) {
+        char ch = tolower(str[i]);
+        if (ch!='a' && ch!='e' && ch!='i' && ch!='o' && ch!='u')
+            return false;
+    }
+    return true;
+}
+
+int main() {
+    string str;
+    cin >> str;
+
+    if (allVowels(str))
+        cout << "All vowels";
+    else
+        cout << "Not all vowels";
+
+    return 0;
+}
+
+OUTPUT:
+hello
+Not all vowels
+</code></pre>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

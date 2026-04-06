@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Handling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>File Handling</h1>
+
+<div class="question">
+    <p>Q1:Write a C++ program to create a new text file and write some text into it.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+#include <fstream>
+using namespace std;
+
+int main(){
+
+    ofstream file("data.txt");
+    if (!file.is_open()){
+        cout << "file not opened ";
+        return 0;
+    }
+    else {
+        cout << "file opened ";
+    }
+
+
+    file << "Hellllo \n"; 
+    cout << "Data Entered ";
+    file.close();
+    return 1;
+}
+
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q2:Write a C++ program to open an existing text file and display its contents on the console.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+#include <fstream>
+using namespace std;
+
+int main(){
+
+    ifstream file ("data.txt");
+    if (!file.is_open()){
+        cout << "file not opened ";
+        return 0;
+    }
+    else {
+        cout << "file opened \n\n";
+    }
+
+    char a;
+    while (file.get(a))
+    {
+       cout << a;
+    }
+
+    file.close();
+    return 1;
+    
+
+}
+
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q3:Write a C++ program to count the number of lines in a text file.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+#include <fstream>
+using namespace std;
+
+int main(){
+
+    ifstream file ("data.txt");
+    if (!file.is_open()){
+        cout << "file not opened ";
+        return 0;
+    }
+    else {
+        cout << "file opened \n\n";
+    }
+
+    int a = 0;
+    string temp;
+    while (getline(file,temp))
+    {
+       a++;
+    }
+
+    cout << "No of Lines : "<< a;
+    file.close();
+    return 1;
+    
+
+}
+
+OUTPUT:
+No of Lines : 4
+
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q4:Write a C++ program to count the number of words in a text file.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+#include <fstream>
+using namespace std;
+
+int main(){
+
+    ifstream file ("data.txt");
+    if (!file.is_open()){
+        cout << "file not opened ";
+        return 0;
+    }
+    else {
+        cout << "file opened \n\n";
+    }
+
+    int a = 0;
+    string temp;
+    while (file >> temp)
+    {
+       a++;
+    }
+
+    cout << "No of Words : "<< a;
+    file.close();
+    return 1;
+    
+
+}
+
+OUTPUT:
+file opened 
+No of Words : 5
+
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q5:Write a C++ program to copy the contents of one text file to another.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+#include <fstream>
+using namespace std;
+
+int main(){
+
+    string path = "data.txt";
+    ifstream file (path);
+    if (!file.is_open()){
+        cout << "file not opened ";
+        return 0;
+    }
+    else {
+        cout << "file opened \n\n";
+    }
+    ofstream copy("copyof_"+ path);
+    if (!copy.is_open()){
+        cout << "Copy file not opened ";
+        return 0;
+    }
+    else {
+        cout << "Copy file opened \n";
+    }
+
+    char a;
+    while (file.get(a))
+    {
+        copy << a;
+    }
+
+    cout << "file Copied";
+    file.close();
+    return 1;
+    
+
+}
+
+OUTPUT:
+file opened 
+
+Copy file opened
+file Copied
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q6:Write a C++ program to find and replace a specific word in a text file.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+#include <fstream>
+using namespace std;
+
+int main(){
+
+    fstream file ("data.txt",ios::in | ios::out);
+    if (!file.is_open()){
+        cout << "file not opened ";
+        return 0;
+    }
+    else {
+        cout << "file opened \n\n";
+    }
+
+    string temp,word;
+    cout << "Enter the word to search : ";
+    cin >> temp;
+    cout << "Enter the word to Replace : ";
+    cin >> word;
+    while (file >> temp)
+    {
+
+        if (temp == word){
+
+            if (temp.length() == word.length()){
+                file.seekg(-temp.length(),ios::cur);
+                file << word;
+                cout << "Word Replaced\n";
+                break;
+            }
+            else {
+                cout << "Word size not match\n";
+                
+            }
+
+        }
+    }
+
+    cout << "Word Replaced ";
+    file.close();
+    return 1;
+    
+
+}
+OUTPUT:
+
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q7:Write a C++ program to append new data to an existing text file.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+#include <fstream>
+using namespace std;
+
+int main(){
+
+    ofstream file ("data.txt",ios::app);
+    if (!file.is_open()){
+        cout << "file not opened ";
+        return 0;
+    }
+    else {
+        cout << "file opened \n\n";
+    }
+
+    string temp;
+    cout << "Enter the data : ";
+    getline(cin, temp);
+    file << temp;
+    cout << "Appeded";
+    file.close();
+    return 1;
+    
+
+}
+
+OUTPUT:
+file opened 
+
+Enter the data : Yooo Hii
+Appeded
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q8:Write a C++ program to sort the lines of a text file in alphabetical order.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+
+
+
+
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q9:Write a C++ program to merge multiple text files into a single file.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+#include <fstream>
+using namespace std;
+
+int main(){
+
+    ifstream file1 ("data1.txt");
+    ifstream file2 ("data2.txt");
+    ifstream file3 ("data3.txt");
+    ofstream merge ("merge.txt");
+
+    if (!file1.is_open() || !file2.is_open() ||!file3.is_open() ||!merge.is_open()){
+        cout << "files not opened ";
+        return 0;
+    }
+    else {
+        cout << "files opened \n\n";
+    }
+
+    char a;
+    while (file1.get(a))
+    {
+        merge << a;
+    }
+    while (file2.get(a))
+    {
+        merge << a;
+    }
+    while (file3.get(a))
+    {
+        merge << a;
+    }
+
+    cout << "File Merged";
+    return 1;
+
+
+
+}
+
+OUTPUT:
+ files opened 
+
+File Merged
+
+
+merge.txt
+
+A well-structured paragraph serves as a foundational building block of writing, focusing on a single, cohesive idea. t typically begins with a clear topic sentence that introduces the main point, followed by supporting sentences that provide relevant details, evidence, or examples to develop that idea.To maintain flow and coherence, writers often use transition words to connect these sentences logically. Finally, a strong paragraph closes with a concluding sentence that summarizes the main point or bridges to the next topic. While often composed of three to five sentences, the length can vary depending on the depth of the topic and the writer's style.
+
+
+
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q10:Write a C++ program to split a large text file into smaller files of equal size</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+#include <fstream>
+using namespace std;
+
+int main() {
+
+    ifstream data("data.txt");
+    ofstream file1("split1.txt");
+    ofstream file2("split2.txt");
+    ofstream file3("split3.txt");
+
+    if (!data || !file1 || !file2 || !file3) {
+        cout << "Files not opened";
+        return 0;
+    }
+
+    cout << "Files opened\n";
+
+    data.seekg(0, ios::end);
+    int size = data.tellg();
+    data.seekg(0, ios::beg);
+
+    int f = size / 3;
+
+    char a;
+    int count = 0;
+
+    while (data.get(a)) {
+        if (count < f)
+            file1 << a;
+        else if (count < 2 * f)
+            file2 << a;
+        else
+            file3 << a;
+
+        count++;
+    }
+
+    cout << "File Splitted";
+}
+
+
+
+OUTPUT:
+Files opened
+File Split Successfully
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q11:Write a C++ program to search for a specific string in a text file and display its line number(s).</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main(){
+
+    ifstream file ("data.txt");
+    if (!file.is_open()){
+        cout << "file not opened ";
+        return 0;
+    }
+    else {
+        cout << "file opened \n\n";
+    }
+
+    string temp,search;
+    cout << "Enter the sting to search : ";
+    cin >> search;
+    int a = 0;
+    while (getline(file,temp))
+    {
+        a++;
+      if (temp.find(search) != string::npos) {
+        cout << "Word found , Line no : " << a << "\n";
+    } 
+    }
+
+    file.close();
+    return 1;
+
+    
+
+}
+
+
+OUTPUT:
+file opened 
+
+Enter the sting to search : Hell
+Word found , Line no : 1
+Word found , Line no : 2
+Word found , Line no : 4
+
+</code></pre>
+</div>
+
+
+
+<div class="question">
+    <p>Q12:Write a C++ program to encrypt the contents of a text file using a simple encryption algorithm.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+
+    ifstream data("data.txt",ios::in);
+    ofstream encrypt("encrypted.txt",ios::out);
+
+
+    if (!data.is_open() || !encrypt.is_open()){
+        cout << "File no opened ";
+        return 0;
+    }
+
+    else {
+        cout << "File Opened ";
+    }
+   
+    char a;
+    
+    while (data.get(a)){
+        encrypt << (char)(a+3);
+    }
+    cout << "Data Added \n";
+
+}
+
+
+OUTPUT:
+File Opened Data Added 
+
+ENCRYPTED FIEL 
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q13:Write a C++ program to decrypt the contents of a text file encrypted using the above algorithm.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+
+
+    ifstream decrypt("encrypted.txt");
+
+     if (!decrypt.is_open()){
+        cout << "File no opened ";
+        return 0;
+    }
+    else {
+        cout << "file opened ";
+    }
+
+    char a;
+    while(decrypt.get(a)){
+        cout << (char)(a-3) ;
+    }
+
+    cout << "\nEnd ";
+    return 1;
+}
+
+OUTPUT:
+file opened A well-structured paragraph serves as a foundational building block of writing, focusing on a single, cohesive idea. t typically begins with a clear topic sentence that introduces the main point, followed by supporting sentences that provide relevant details, evidence, or examples to develop that idea.To maintain flow and coherence, writers often use transition words to connect these sentences logically. Finally, a strong paragraph closes with a concluding sentence that summarizes the main point or bridges to the next topic. While often composed of three to five sentences, the length can vary depending on the depth of the topic and the writer's style.
+End
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q14:Write a C++ program to read a CSV file and display its contents in tabular form.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+
+int main(){
+
+    ifstream file("data.csv",ios::in);
+
+    string line , cell;
+
+    while (getline(file,line)){
+        
+        stringstream ss(line);
+        while (getline(ss,cell,',')){
+            cout << left << std::setw(10) << cell ;
+        }
+        cout << "\n";
+        
+    }
+
+
+    return 0 ;
+}
+OUTPUT:
+ID        Name      Class     Maths     Science   English   Computer  Total     Average   Grade     Status    
+101       Aman      12A       78        82        75        80        315       78.75     B         Pass      
+102       Simran    12A       88        79        82        86        335       83.75     A         Pass
+103       Rahul     12B       65        70        68        72        275       68.75     C         Pass      
+104       Priya     12B       92        91        89        95        367       91.75     A+        Pass    
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q15:Write a C++ program to calculate the average of numbers stored in a file.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream fout("numbers.txt");
+    int num;
+
+    // Writing numbers into file
+    cout << "Enter 5 numbers:\n";
+    for(int i = 0; i < 5; i++) {
+        cin >> num;
+        fout << num << " ";
+    }
+    fout.close();
+
+    // Reading and calculating average
+    ifstream fin("numbers.txt");
+    int sum = 0, count = 0;
+
+    while(fin >> num) {
+        sum += num;
+        count++;
+    }
+    fin.close();
+
+    float avg = (float)sum / count;
+    cout << "Average = " << avg;
+
+    return 0;
+}
+OUTPUT:
+Enter 5 numbers:
+10
+20
+30
+40
+50
+Average = 30
+
+
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q16:Write a C++ program to store the information of 10 Students having rollno,name,marks,mobileno properties, get() and set() member functions as binary file with following options 1. Insert Record 2. Delete Record 3. Update Record (based on rollno) 4. Search Record (based on rollno) 5. Clone the file 6. Exit.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+class Student {
+    int rollno;
+    char name[50];
+    float marks;
+    char mobileno[15];
+
+public:
+    void get() {
+        cout << "Enter Roll No: ";
+        cin >> rollno;
+        cout << "Enter Name: ";
+        cin >> name;
+        cout << "Enter Marks: ";
+        cin >> marks;
+        cout << "Enter Mobile No: ";
+        cin >> mobileno;
+    }
+
+    void show() {
+        cout << "\nRoll No: " << rollno
+             << "\nName: " << name
+             << "\nMarks: " << marks
+             << "\nMobile: " << mobileno << endl;
+    }
+
+    int getRoll() {
+        return rollno;
+    }
+
+    void setMarks(float m) {
+        marks = m;
+    }
+};
+
+void insertRecord() {
+    ofstream fout("student.dat", ios::binary | ios::app);
+    Student s;
+    s.get();
+    fout.write((char*)&s, sizeof(s));
+    fout.close();
+}
+
+void displayAll() {
+    ifstream fin("student.dat", ios::binary);
+    Student s;
+    while(fin.read((char*)&s, sizeof(s))) {
+        s.show();
+    }
+    fin.close();
+}
+
+void searchRecord(int r) {
+    ifstream fin("student.dat", ios::binary);
+    Student s;
+    while(fin.read((char*)&s, sizeof(s))) {
+        if(s.getRoll() == r) {
+            cout << "Record Found:";
+            s.show();
+            return;
+        }
+    }
+    cout << "Record Not Found\n";
+    fin.close();
+}
+
+void deleteRecord(int r) {
+    ifstream fin("student.dat", ios::binary);
+    ofstream fout("temp.dat", ios::binary);
+    Student s;
+
+    while(fin.read((char*)&s, sizeof(s))) {
+        if(s.getRoll() != r)
+            fout.write((char*)&s, sizeof(s));
+    }
+
+    fin.close();
+    fout.close();
+
+    remove("student.dat");
+    rename("temp.dat", "student.dat");
+}
+
+void updateRecord(int r) {
+    fstream file("student.dat", ios::binary | ios::in | ios::out);
+    Student s;
+
+    while(file.read((char*)&s, sizeof(s))) {
+        if(s.getRoll() == r) {
+            float newMarks;
+            cout << "Enter new marks: ";
+            cin >> newMarks;
+            s.setMarks(newMarks);
+
+            int pos = -1 * sizeof(s);
+            file.seekp(pos, ios::cur);
+            file.write((char*)&s, sizeof(s));
+
+            cout << "Record Updated\n";
+            return;
+        }
+    }
+    cout << "Record Not Found\n";
+    file.close();
+}
+
+void cloneFile() {
+    ifstream fin("student.dat", ios::binary);
+    ofstream fout("clone.dat", ios::binary);
+    Student s;
+
+    while(fin.read((char*)&s, sizeof(s))) {
+        fout.write((char*)&s, sizeof(s));
+    }
+
+    cout << "File Cloned Successfully\n";
+
+    fin.close();
+    fout.close();
+}
+
+int main() {
+    int choice, roll;
+
+    do {
+        cout << "\n1.Insert\n2.Delete\n3.Update\n4.Search\n5.Clone\n6.Display\n7.Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
+
+        switch(choice) {
+            case 1: insertRecord(); break;
+            case 2:
+                cout << "Enter Roll No: ";
+                cin >> roll;
+                deleteRecord(roll);
+                break;
+            case 3:
+                cout << "Enter Roll No: ";
+                cin >> roll;
+                updateRecord(roll);
+                break;
+            case 4:
+                cout << "Enter Roll No: ";
+                cin >> roll;
+                searchRecord(roll);
+                break;
+            case 5: cloneFile(); break;
+            case 6: displayAll(); break;
+        }
+
+    } while(choice != 7);
+
+    return 0;
+}
+
+OUTPUT:
+1.Insert
+2.Delete
+3.Update
+4.Search
+5.Clone
+6.Display
+7.Exit
+Enter choice: 1
+
+Enter Roll No: 1
+Enter Name: Aman
+Enter Marks: 85
+Enter Mobile No: 9876543210
+
+Enter choice: 1
+Enter Roll No: 2
+Enter Name: Ravi
+Enter Marks: 78
+Enter Mobile No: 9123456780
+
+Enter choice: 6
+
+Roll No: 1
+Name: Aman
+Marks: 85
+Mobile: 9876543210
+
+Roll No: 2
+Name: Ravi
+Marks: 78
+Mobile: 9123456780
+
+Enter choice: 4
+Enter Roll No: 1
+Record Found:
+Roll No: 1
+Name: Aman
+Marks: 85
+Mobile: 9876543210
+
+Enter choice: 3
+Enter Roll No: 1
+Enter new marks: 90
+Record Updated
+
+Enter choice: 5
+File Cloned Successfully
+
+Enter choice: 7
+</code></pre>
+</div>
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

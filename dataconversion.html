@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Conversion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Data Conversion</h1>
+
+<div class="question">
+    <p>Q1:C++ Program to convert String to int</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+int main(){
+
+    string text;
+    int sign = 1;
+    int index = 0;
+    int number = 0;
+
+    cout << "Enter numeric string: ";
+    cin >> text;
+
+    if (text.length() == 0){
+        cout << "Invalid input \n";
+        return 0;
+    }
+
+    if (text[0] == '-'){
+        sign = -1;
+        index = 1;
+        if (index == (int)text.length()){
+        cout << "Invalid input \n";
+        return 0;
+    }
+    }
+
+    for (int i = index; i < (int)text.length(); i++){
+        if (text[i] < '0' || text[i] > '9'){
+            cout << "Invalid input\n";
+            return 0;
+        }
+
+        number = number * 10 + (text[i] - '0');
+    }
+
+    number = number * sign;
+
+    cout << "Converted int value : " << number ;
+    return 0;
+}
+
+OUTPUT:
+Enter numeric string: 12243
+Converted int value : 12243
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q2:C++ Program to convert int to String</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+string tostr(int number){
+
+    if (number == 0){
+        return "0";
+    }
+
+    int sign = 1;
+    if (number < 0){
+        sign = -1;
+        number = -number;
+    }
+
+    string reversed = "";
+    while (number > 0){
+        int digit = number % 10;
+        reversed += (char)('0' + digit);
+        number = number / 10;
+    }
+
+    string result = "";
+    if (sign == -1){
+        result += '-';
+    }
+
+    for (int i = (int)reversed.length() - 1; i >= 0; i--){
+        result += reversed[i];
+    }
+
+    return result;
+}
+
+
+int main(){
+
+    int number;
+
+    cout << "Enter integer value : ";
+    cin >> number;
+
+    string text = tostr(number);
+
+    cout << "Converted string value : " << text ;
+    return 0;
+}
+
+OUTPUT:
+Enter integer value : 34343
+Converted string value : 34343
+</code></pre>
+</div>
+<div class="question">
+    <p>Q3:C++ Program to convert String to long</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+int main(){
+
+    string text;
+    int sign = 1;
+    int index = 0;
+    long value = 0;
+
+    cout << "Enter numeric string: ";
+    cin >> text;
+
+    if (text.length() == 0){
+        cout << "Invalid input\n";
+        return 0;
+    }
+
+    if (text[0] == '-'){
+        sign = -1;
+        index = 1;
+        
+            if (index == (int)text.length()){
+                cout << "Invalid input\n";
+                return 0;
+            }
+    }
+
+    for (int i = index; i < (int)text.length(); i++){
+        if (text[i] < '0' || text[i] > '9'){
+            cout << "Invalid input\n";
+            return 0;
+        }
+
+        value = value * 10 + (text[i] - '0');
+    }
+
+    value = value * sign;
+
+    cout << "Converted long value : " << value ;
+    return 0;
+}
+
+OUTPUT:
+Enter numeric string: 34343
+Converted long value : 34343    
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q4:C++ Program to convert long to String</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+string toText(long number){
+
+    if (number == 0){
+        return "0";
+    }
+
+    int sign = 1;
+    if (number < 0){
+        sign = -1;
+        number = -number;
+    }
+
+    string reversed = "";
+    while (number > 0){
+        reversed += (char)('0' + (number % 10));
+        number = number / 10;
+    }
+
+    string result = "";
+    if (sign == -1){
+        result += '-';
+    }
+
+    for (int i = (int)reversed.length() - 1; i >= 0; i--){
+        result += reversed[i];
+    }
+
+    return result;
+}
+
+
+int main(){
+
+    int value;
+
+    cout << "Enter long value : ";
+    cin >> value;
+
+    string text = toText(value);
+
+    cout << "Converted string value: " << text ;
+    return 0;
+}
+
+OUTPUT:
+Enter long value : 22222
+Converted string value: 22222
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q5:C++ Program to convert String to float</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+int main(){
+
+    string text;
+    int sign = 1;
+    int index = 0;
+    int integerPart = 0;
+    int fractionPart = 0;
+    int divisor = 1;
+    int hasDot = 0;
+
+    cout << "Enter float in string form: ";
+    cin >> text;
+
+    if (text.length() == 0){
+        cout << "Invalid input\n";
+        return 0;
+    }
+
+    if (text[0] == '-'){
+        sign = -1;
+        index = 1;
+    }
+
+    for (int i = index; i < (int)text.length(); i++){
+        if (text[i] == '.'){
+            if (hasDot == 1){
+                cout << "Invalid input\n";
+                return 0;
+            }
+
+            hasDot = 1;
+            continue;
+        }
+
+        if (text[i] < '0' || text[i] > '9'){
+            cout << "Invalid input\n";
+            return 0;
+        }
+
+        if (hasDot == 0){
+            integerPart = integerPart * 10 + (text[i] - '0');
+        }
+
+        else{
+            fractionPart = fractionPart * 10 + (text[i] - '0');
+            divisor = divisor * 10;
+        }
+    }
+
+    float value = (float)integerPart + (float)fractionPart / divisor;
+    value = value * sign;
+
+    cout << "Converted float value: " << value ;
+    return 0;
+}
+
+OUTPUT:
+Enter float in string form: 3232.43
+Converted float value: 3232.43
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q6:C++ Program to convert float to String</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+string intToText(int number){
+
+    if (number == 0){
+        return "0";
+    }
+
+    string reversed = "";
+    while (number > 0){
+        reversed += (char)('0' + (number % 10));
+        number = number / 10;
+    }
+
+    string result = "";
+    for (int i = (int)reversed.length() - 1; i >= 0; i--){
+        result += reversed[i];
+    }
+
+    return result;
+}
+
+
+int main(){
+
+    float value;
+
+    cout << "Enter float value: ";
+    cin >> value;
+
+    int sign = 1;
+    if (value < 0){
+        sign = -1;
+        value = -value;
+    }
+
+    int intPart = (int)value;
+    float fraction = value - intPart;
+
+    int threeDigits = (int)(fraction * 1000 + 0.5f);
+    if (threeDigits == 1000){
+        intPart++;
+        threeDigits = 0;
+    }
+
+    string text = "";
+    if (sign == -1){
+        text += '-';
+    }
+
+    text += intToText(intPart);
+    text += '.';
+
+    text += (char)('0' + (threeDigits / 100));
+    text += (char)('0' + (threeDigits / 10) % 10);
+    text += (char)('0' + (threeDigits % 10));
+
+    cout << "Converted string value : " << text ;
+    return 0;
+}
+
+OUTPUT:
+Enter float value: 233.44
+Converted string value : 233.440
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q7:C++ Program to convert String to double</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+int main(){
+
+    string text;
+    int sign = 1;
+    int index = 0;
+    int integerPart = 0;
+    long fractionPart = 0;
+    int divisor = 1;
+    int hasDot = 0;
+
+    cout << "Enter double in string form: ";
+    cin >> text;
+
+    if (text.length() == 0){
+        cout << "Invalid input\n";
+        return 0;
+    }
+
+    if (text[0] == '-'){
+        sign = -1;
+        index = 1;
+    }
+
+    for (int i = index; i < (int)text.length(); i++){
+        if (text[i] == '.'){
+            if (hasDot == 1){
+                cout << "Invalid input\n";
+                return 0;
+            }
+
+            hasDot = 1;
+            continue;
+        }
+
+        if (text[i] < '0' || text[i] > '9'){
+            cout << "Invalid input\n";
+            return 0;
+        }
+
+        if (hasDot == 0){
+            integerPart = integerPart * 10 + (text[i] - '0');
+        }
+
+        else{
+            fractionPart = fractionPart * 10 + (text[i] - '0');
+            divisor = divisor * 10;
+        }
+    }
+
+    double value = (double)integerPart + (double)fractionPart / divisor;
+    value = value * sign;
+
+    cout << "Converted double value (float mode): " << value ;
+    return 0;
+}
+
+
+OUTPUT:
+Enter double in string form: 4.55
+Converted double value (float mode): 4.55
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q8:C++ Program to convert double to String</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+bool isValidDecimal(string text){
+
+    if (text.length() == 0){
+        return false;
+    }
+
+    int index = 0;
+    int hasDot = 0;
+
+    if (text[0] == '-'){
+        index = 1;
+    }
+
+    if (index == (int)text.length()){
+        return false;
+    }
+
+    for (int i = index; i < (int)text.length(); i++){
+        if (text[i] == '.'){
+            if (hasDot == 1){
+                return false;
+            }
+
+            hasDot = 1;
+            continue;
+        }
+
+        if (text[i] < '0' || text[i] > '9'){
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+int main(){
+
+    string value;
+
+    cout << "Enter double value : ";
+    cin >> value;
+
+    if (!isValidDecimal(value)){
+        cout << "Invalid input\n";
+        return 0;
+    }
+
+    cout << "Converted string value: " << value ;
+    return 0;
+}
+
+OUTPUT:
+Enter double value : 3.333333333333333333333333333333333333333333
+Converted string value: 3.333333333333333333333333333333333333333333
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q9:C++ Program to convert char to int</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+
+using namespace std;
+
+
+int main(){
+
+    char ch;
+
+    cout << "Enter a character: ";
+    cin >> ch;
+
+    int value = (int)ch;
+
+    cout << "Converted int value: " << value ;
+    return 0;
+}
+
+OUTPUT:
+Enter a character: T
+Converted int value: 84
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q10:C++ Program to convert int to char</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+
+using namespace std;
+
+
+int main(){
+
+    int value;
+
+    cout << "Enter integer value (0 to 127) :";
+    cin >> value;
+
+    if (value < 0 || value > 127){
+        cout << "Value out of range";
+        return 0;
+    }
+
+    char ch = (char)value;
+
+    cout << "Converted char value: " << ch ;
+    return 0;
+}
+
+OUTPUT:
+Enter integer value (0 to 127) :65
+Converted char value: A
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q11:C++ Program to convert Binary to Decimal</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+
+using namespace std;
+
+
+int main(){
+
+    int binary;
+    int decimal = 0;
+    int place = 1;
+
+    cout << "Enter binary number: ";
+    cin >> binary;
+
+    while (binary > 0){
+        int digit = binary % 10;
+
+        if (digit != 0 && digit != 1){
+            cout << "Invalid binary number\n";
+            return 0;
+        }
+
+        decimal += digit * place;
+        place = place * 2;
+        binary = binary / 10;
+    }
+
+    cout << "Decimal value: " << decimal ;
+    return 0;
+}
+
+OUTPUT:
+Enter binary number: 1010001
+Decimal value: 81
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q12:C++ Program to convert Decimal to Binary</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+
+using namespace std;
+
+
+int main(){
+
+    int decimal;
+    int binary[64];
+    int index = 0;
+
+    cout << "Enter decimal number: ";
+    cin >> decimal;
+
+    if (decimal == 0){
+        cout << "Binary value: 0 ";
+        return 0;
+    }
+
+    while (decimal > 0){
+        binary[index] = decimal % 2;
+        decimal = decimal / 2;
+        index++;
+    }
+
+    cout << "Binary value : ";
+    for (int i = index - 1; i >= 0; i--){
+        cout << binary[i];
+    }
+
+    return 0;
+}
+
+OUTPUT:
+Enter binary number: 1010001
+Decimal value: 81
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q13:C++ Program to convert Hex to Decimal</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+int hexValue(char ch){
+
+    if (ch >= '0' && ch <= '9'){
+        return ch - '0';
+    }
+
+    if (ch >= 'A' && ch <= 'F'){
+        return 10 + (ch - 'A');
+    }
+
+    if (ch >= 'a' && ch <= 'f'){
+        return 10 + (ch - 'a');
+    }
+
+    return -1;
+}
+
+
+int main(){
+
+    string hex;
+    int decimal = 0;
+
+    cout << "Enter hex value : ";
+    cin >> hex;
+
+    for (int i = 0; i < (int)hex.length(); i++){
+        int value = hexValue(hex[i]);
+
+        if (value == -1){
+            cout << "Invalid hex value";
+            return 0;
+        }
+
+        decimal = decimal * 16 + value;
+    }
+
+    cout << "Decimal value : " << decimal ;
+    return 0;
+}
+
+OUTPUT:
+Enter hex value : 323ABD
+Decimal value : 3291837
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q14:C++ Program to convert Decimal to Hex</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+int main(){
+
+    int decimal;
+    string hex = "";
+
+    cout << "Enter decimal number: ";
+    cin >> decimal;
+
+    if (decimal == 0){
+        cout << "Hex value: 0 ";
+        return 0;
+    }
+
+    while (decimal > 0){
+        int rem = decimal % 16;
+
+        if (rem < 10){
+            hex += (char)('0' + rem);
+        }
+
+        else{
+            hex += (char)('A' + (rem - 10));
+        }
+
+        decimal = decimal / 16;
+    }
+
+    string result = "";
+    for (int i = (int)hex.length() - 1; i >= 0; i--){
+        result += hex[i];
+    }
+
+    cout << "Hex value : " << result ;
+    return 0;
+}
+
+OUTPUT:
+Enter decimal number: 3291837
+Hex value : 323ABD
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q15:C++ Program to convert Octal to Decimal</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+
+using namespace std;
+
+
+int main(){
+
+    int octal;
+    int decimal = 0;
+    int place = 1;
+
+    cout << "Enter octal number: ";
+    cin >> octal;
+
+    while (octal > 0){
+        int digit = octal % 10;
+
+        if (digit < 0 || digit > 7){
+            cout << "Invalid octal number ";
+            return 0;
+        }
+
+        decimal += digit * place;
+        place = place * 8;
+        octal = octal / 10;
+    }
+
+    cout << "Decimal valuev: " << decimal ;
+    return 0;
+}
+
+OUTPUT:
+Enter octal number: 23477
+Decimal valuev: 10047
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q16:C++ Program to convert Decimal to Octal</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include <iostream>
+
+using namespace std;
+
+
+int main(){
+
+    int decimal;
+    int octal[64];
+    int index = 0;
+
+    cout << "Enter decimal number: ";
+    cin >> decimal;
+
+    if (decimal == 0){
+        cout << "Octal value: 0 ";
+        return 0;
+    }
+
+    while (decimal > 0){
+        octal[index] = decimal % 8;
+        decimal = decimal / 8;
+        index++;
+    }
+
+    cout << "Octal value: ";
+    for (int i = index - 1; i >= 0; i--){
+        cout << octal[i];
+    }
+
+    return 0;
+}
+
+OUTPUT:
+Enter decimal number: 10047
+Octal value: 23477
+
+</code></pre>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

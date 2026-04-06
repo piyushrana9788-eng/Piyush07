@@ -1,0 +1,80 @@
+/* Import modern font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Space+Mono&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Heading */
+h1 {
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    border-bottom: 2px solid #fff;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* List */
+ul {
+    list-style: none;
+    padding: 20px;
+    
+}
+
+/* List items */
+li {
+    margin: 25px 0;
+    display: inline-block;
+}
+
+/* Buttons / Links */
+a {
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: 0.2s ease;
+    border: 1px solid #fff;
+}
+
+a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Question Box */
+.question {
+    background: #111;
+    border: 1px solid #fff;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 700px;
+}
+
+/* Answer */
+.answer {
+    display: none;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+/* Code Block */
+pre {
+    font-family: 'Space Mono', monospace;
+    background-color: #111;
+    color: #fff;
+    text-align: left;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    border: 1px solid #fff;
+}

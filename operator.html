@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Operator Overloading</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Operator Overloading</h1>
+
+<div class="question">
+    <p>Q1: Define a class Complex to represent complex numbers. Overload the + operator to add two complex numbers.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+class Complex {
+    int real, imag;
+
+public:
+    Complex(int r = 0, int i = 0) {
+        real = r;
+        imag = i;
+    }
+
+    Complex operator+(Complex c) {
+        return Complex(real + c.real, imag + c.imag);
+    }
+
+    void display() {
+        cout << real << " + " << imag << "i" << endl;
+    }
+};
+
+int main() {
+    Complex c1(2, 3), c2(4, 5);
+    Complex c3 = c1 + c2;
+    c3.display();
+}
+
+OUTPUT:
+6 + 8i
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q2:Create a class Fraction to represent fractions. Overload the + operator to add two fractions.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+class Fraction {
+    int num, den;
+
+public:
+    Fraction(int n = 0, int d = 1) {
+        num = n;
+        den = d;
+    }
+
+    Fraction operator+(Fraction f) {
+        int n = num * f.den + f.num * den;
+        int d = den * f.den;
+        return Fraction(n, d);
+    }
+
+    void display() {
+        cout << num << "/" << den << endl;
+    }
+};
+
+int main() {
+    Fraction f1(1, 2), f2(3, 4);
+    Fraction f3 = f1 + f2;
+    f3.display();
+}
+
+OUTPUT:
+Enter first matrix:
+
+2
+3
+2
+1
+Enter second matrix:
+23
+4
+2
+1
+Result:
+52 11
+48 9
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q3:Define a class Matrix to represent matrices. Overload the * operator to multiply two matrices.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+class Matrix {
+    int a[2][2];
+
+public:
+    void input() {
+        for(int i=0;i< 2;i++)
+            for(int j=0;j< 2;j++)
+                cin >> a[i][j];
+    }
+
+    Matrix operator*(Matrix m) {
+        Matrix result;
+        for(int i=0;i< 2;i++) {
+            for(int j=0;j< 2;j++) {
+                result.a[i][j] = 0;
+                for(int k=0;k< 2;k++) {
+                    result.a[i][j] += a[i][k] * m.a[k][j];
+                }
+            }
+        }
+        return result;
+    }
+
+    void display() {
+        for(int i=0;i< 2;i++) {
+            for(int j=0;j< 2;j++)
+                cout << a[i][j] << " ";
+            cout << endl;
+        }
+    }
+};
+
+int main() {
+    Matrix m1, m2, m3;
+    cout << "Enter first matrix:\n";
+    m1.input();
+    cout << "Enter second matrix:\n";
+    m2.input();
+
+    m3 = m1 * m2;
+    cout << "Result:\n";
+    m3.display();
+}
+
+
+OUTPUT:
+Enter first matrix:
+2
+3
+4
+5
+Enter second matrix:
+7
+65
+4
+3
+Result:
+26 139
+48 275
+    </code></pre>
+</div>
+
+<div class="question">
+    <p>Q4:Implement a class String to represent strings. Overload the + operator to concatenate two strings.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+#include <cstring>
+using namespace std;
+
+class String {
+    char str[100];
+
+public:
+    String(char s[] = "") {
+        strcpy(str, s);
+    }
+
+    String operator+(String s) {
+        String temp;
+        strcpy(temp.str, str);
+        strcat(temp.str, s.str);
+        return temp;
+    }
+
+    void display() {
+        cout << str << endl;
+    }
+};
+
+int main() {
+    String s1("Hello "), s2("World");
+    String s3 = s1 + s2;
+    s3.display();
+}
+
+OUTPUT:
+Hello World
+  </code></pre>
+</div>
+
+<div class="question">
+    <p>Q5:Define a class Date to represent dates. Overload the < operator to compare two dates.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+
+#include <iostream>
+using namespace std;
+
+class Date {
+    int d, m, y;
+
+public:
+    Date(int day, int month, int year) {
+        d = day; m = month; y = year;
+    }
+
+    bool operator<(Date dt) {
+        if(y < dt.y) return true;
+        if(y == dt.y && m < dt.m) return true;
+        if(y == dt.y && m == dt.m && d < dt.d) return true;
+        return false;
+    }
+};
+
+int main() {
+    Date d1(10, 5, 2023), d2(12, 6, 2023);
+
+    if(d1 < d2)
+        cout << "d1 is earlier\n";
+    else
+        cout << "d2 is earlier\n";
+}
+
+OUTPUT:
+d1 is earlier
+     </code></pre>
+</div>
+
+<div class="question">
+    <p>Q6:Implement a class Money to represent money. Overload the + operator to add two amounts of money.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+class Money {
+    int rupees, paise;
+
+public:
+    Money(int r = 0, int p = 0) {
+        rupees = r;
+        paise = p;
+    }
+
+    Money operator+(Money m) {
+        Money temp;
+        temp.paise = paise + m.paise;
+        temp.rupees = rupees + m.rupees + temp.paise / 100;
+        temp.paise %= 100;
+        return temp;
+    }
+
+    void display() {
+        cout << "Rs " << rupees << "." << paise << endl;
+    }
+};
+
+int main() {
+    Money m1(10, 75), m2(5, 50);
+    Money m3 = m1 + m2;
+    m3.display();
+}
+OUTPUT:
+Rs 16.25
+  </code></pre>
+</div>
+
+<div class="question">
+    <p>Q7:Create a class Rectangle to represent rectangles. Overload the == operator to check if two rectangles are equal.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+class Rectangle {
+    int length, width;
+
+public:
+    Rectangle(int l, int w) {
+        length = l;
+        width = w;
+    }
+
+    bool operator==(Rectangle r) {
+        return (length == r.length && width == r.width);
+    }
+};
+
+int main() {
+    Rectangle r1(10, 5), r2(10, 5);
+
+    if(r1 == r2)
+        cout << "Rectangles are equal\n";
+    else
+        cout << "Rectangles are not equal\n";
+}
+
+OUTPUT:
+Rectangles are equal
+  </code></pre>
+</div>
+
+<div class="question">
+    <p>Q8:Define a class Time to represent time. Overload the << operator to display the time in HH:MM format.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+class Time {
+    int h, m;
+
+public:
+    Time(int hour, int min) {
+        h = hour;
+        m = min;
+    }
+
+    friend ostream& operator<<(ostream &out, Time t) {
+        out << (t.h < 10 ? "0" : "") << t.h << ":"
+            << (t.m < 10 ? "0" : "") << t.m;
+        return out;
+    }
+};
+
+int main() {
+    Time t1(9, 5);
+    cout << t1;
+}
+
+OUTPUT:
+09:05
+  </code></pre>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,3197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Programming Constructs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Basic Programming Constructs</h1>
+
+<div class="question">
+    <p>Q1:Write a C++ program to print "Hello World!" screen</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+   cout << "hello";
+  
+}
+
+OUTPUT:
+hello
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q2: Write a C++ program to print the sum of two numbers</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+int num1, num2 , sum;
+cout<< "enter 1 no.:";
+cin>>num1;
+cout << "enter 2 no.:";
+cin>>num2;
+sum=num1+num2;
+
+cout << "total no.:" << sum << endl;
+return 0;  
+} 
+
+
+OUTPUT:
+enter 1 no.:2
+enter 2 no.:1
+total no.:3 
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q3: Write a C++ program that takes two numbers and display the product of two numbers</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+float num1, num2 , pro;
+cout<< "enter 1 no.:";
+cin>>num1;
+cout<< "enter 2 no.:";
+cin>>num2;
+pro=num1*num2;
+
+cout<< "multiplied no.:" << pro << endl;
+
+return 0;
+  
+}
+
+OUTPUT:
+enter 1 no.:2
+enter 2 no.:1
+total no.:3 
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q4:Write a C++ program to print the sum, multiply, subtract, divide and remainder of two numbers</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int a, b;
+
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+
+    cout << "Sum = " << a + b << endl;
+    cout << "Subtraction = " << a - b << endl;
+    cout << "Multiplication = " << a * b << endl;
+    cout << "Division = " << a / b << endl;
+    cout << "Remainder = " << a % b << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter two numbers: 23
+34
+Sum = 57
+Subtraction = -11
+Multiplication = 782
+Division = 0
+Remainder = 23
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q5:Write a C++ program that takes five numbers as input to calculate and print the average of the numbers</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    float a, b, c, d, e, avg;
+
+    cout << "Enter five numbers: ";
+    cin >> a >> b >> c >> d >> e;
+
+    avg = (a + b + c + d + e) / 5;
+
+    cout << "Average = " << avg;
+
+    return 0;
+}
+
+OUTPUT:
+enter 5 no:3 4 5 67 7  
+average:17
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q6:Write a C++ program to swap two variables</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int a, b, temp;
+     cout<<"enter two var:";
+     cin>>a>>b;
+
+     temp =a;
+     a=b;
+     b=temp;
+
+     cout<<"after swapping" << endl;
+    cout<<"a="<< a << endl;
+    cout<< "b=" << b << endl ;
+    return 0;
+}
+
+OUTPUT:
+enter two var: 2 3
+after swapping
+a=3
+b=2
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q7:Write a C++ program to convert a decimal number to binary numbers</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int num, binary[32], i = 0;
+
+    cout << "Enter decimal number: ";
+    cin >> num;
+
+    while(num > 0) {
+        binary[i] = num % 2;
+        num = num / 2;
+        i++;
+    }
+
+    cout << "Binary = ";
+    for(int j = i - 1; j >= 0; j--) {
+        cout << binary[j];
+    }
+
+    return 0;
+}
+OUTPUT:
+Enter decimal number: 2.5
+Binary = 10
+
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q9:Write a C++ program to check whether C++ is installed on your computer or not</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+   cout<<"C++ is installed perfectly";
+   
+   return 0;
+}
+OUTPUT:
+Enter binary number: 10
+Decimal = 2
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q10:Write a C++ program and compute the sum of the digits of an integer</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int num, sum = 0, digit;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    while(num != 0) {
+        digit = num % 10;
+        sum += digit;
+        num = num / 10;
+    }
+
+    cout << "Sum of digits = " << sum;
+
+    return 0;
+}
+
+OUTPUT:
+C++ is installed perfectly
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q11:Write a C++ program to compare two numbers</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+
+int a,b;
+cout<<"enter 2 no.:"<< endl;
+cin>>a>>b;
+if (a< b)
+cout <<"2 no. is greater"<< endl;
+else if (a>b)
+cout <<"1 no. is greater"<< endl;
+else if (a=b)
+cout<<"both are equal"<< endl;
+
+return 0;
+
+}
+
+OUTPUT:
+Enter a number: 2
+Sum of digits = 2
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q12:Write a C++ program to count the letters, spaces, numbers and other characters of an input string</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+  
+   string str;
+  int letters=0, spaces=0, digits=0, others=0;
+  
+   cout<<"enter a string:";
+   getline(cin,str);
+   
+   for(char c: str){
+    if(isalpha (c))
+     letters++;
+     else if (isdigit(c))
+     digits++;
+     else if(isspace(c))
+     spaces++;
+     else
+     others++;
+
+   }
+
+   cout<<"letters:"<< letters<< endl;
+   cout<<"spaces:"<< spaces<< endl;
+   cout<<"digits:"<< digits<< endl;
+   cout<<"other characters:"<< others<< endl;
+
+
+
+    return 0;
+}
+
+OUTPUT:
+2 3  
+2 no. is greater
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q13:Write a C++ program to print the ascii value of a given character</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    char ch;
+    cout<<"Enter a character: ";
+    cin>>ch;
+
+    cout<<"ASCII value of "<< ch<<" is "<< int(ch);
+
+    return 0;
+}
+
+OUTPUT:
+Enter a character: a
+ASCII value of a is 97
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q14:Write a C++ program that accepts an integer (n) and computes the value of n+nn+nnn</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+  
+int n;
+cout<<"enter a number:";
+cin>>n;
+ int nn= n*10+n;
+ int nnn=n*100+n*10+n;
+
+ int result=n+nn+nnn;
+  
+ cout<<"result:"<< result;
+
+
+
+
+    return 0;
+}
+
+OUTPUT:
+enter a string:helloo 
+letters:6
+spaces:0
+digits:0
+other characters:0
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q15:Write a C++ program to display the system time </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+#include<ctime>
+using namespace std;
+
+int main() {
+  
+time_t now=time(0);
+
+cout<<"current time is :"<< ctime(&now);
+
+
+
+
+    return 0;
+}
+
+OUTPUT:
+current time is :Sun Apr 05 14:38:21 2026
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q16:Write a C++ program to print the odd numbers from 1 to 20  </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    for(int i=1; i<=20; i+=2)
+        cout << i << " ";
+    return 0;
+}
+
+OUTPUT:
+1 3 5 7 9 11 13 15 17 19 
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q17:Write a C++ program to print the even numbers from 1 to 20  </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    for(int i=2; i<=20; i+=2)
+        cout << i << " ";
+    return 0;
+}
+
+OUTPUT:
+2 4 6 8 10 12 14 16 18 20 
+</code></pre>
+</div>
+<div class="question">
+    <p>Q18:Write a C++ program to convert a string to an integer </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+#include <string>
+using namespace std;
+
+int main() {
+    string str;
+    cout << "Enter a number string: ";
+    cin >> str;
+
+    int num = stoi(str);
+
+    cout << "Integer value: " << num;
+    return 0;
+}
+OUTPUT:
+Enter a number string: 234
+Integer value: 234
+</code></pre>
+</div>
+<div class="question">
+    <p>Q19: Write a C++ program to convert seconds to hour, minute and seconds </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int seconds;
+    cout << "Enter seconds: ";
+    cin >> seconds;
+
+    int hours = seconds / 3600;
+    int minutes = (seconds % 3600) / 60;
+    int sec = seconds % 60;
+
+    cout << "Hours: " << hours << endl;
+    cout << "Minutes: " << minutes << endl;
+    cout << "Seconds: " << sec << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter seconds: 234
+Hours: 0
+Minutes: 3
+Seconds: 54
+</code></pre>
+</div>
+<div class="question">
+    <p>Q20:Write a C++ program to compute the sum of the first 100 prime numbers </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+bool isPrime(int num){
+    if(num < 2) return false;
+    for(int i=2;i*i<=num;i++)
+        if(num%i==0) return false;
+    return true;
+}
+
+int main() {
+    int count=0, num=2;
+    long sum=0;
+
+    while(count< 100){
+        if(isPrime(num)){
+            sum += num;
+            count++;
+        }
+        num++;
+    }
+
+    cout << "Sum of first 100 prime numbers: " << sum;
+    return 0;
+}  
+
+OUTPUT:
+Sum of first 100 prime numbers: 24133
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q21:Write a C++ program to compute the square root of an given integer</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+#include<cmath>
+using namespace std;
+
+int main() {
+    int num;
+    cout<<"enter a number:";
+    cin>>num;
+
+    cout<<"square root:"<< sqrt(num);
+
+    return 0;
+}
+
+OUTPUT:
+enter a number:23
+squared number:4.79583
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q22:Write a C++ program to check if a positive number is a palindrome or not</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+   int num, rev=0,rem,temp;
+   cout<<"enter a number:";
+   cin>>num;
+   
+   temp=num;
+   while(num>0){
+    rem=num%10;
+    rev=rev*10+ rem;
+    num /=10;
+   }
+
+   if(temp==rev)
+   cout<<"is palindrome";
+   else
+   cout<<"is not palindrome";
+    return 0;
+}
+
+OUTPUT:
+enter a number:20
+is not palindrome
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q23:Write a C++ program to add two numbers without using any arithmetic operators </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int a,b;
+
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+
+    while(b!=0){
+        int carry = a & b;
+        a = a ^ b;
+        b = carry << 1;
+    }
+
+    cout << "Sum: " << a;
+
+    return 0;
+}
+OUTPUT:
+Enter two numbers: 2 3 
+Sum: 5
+</code></pre>
+</div>
+<div class="question">
+    <p>Q24:Write a C++ program to add all the digits of a given positive integer </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int num, sum=0, rem;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    while(num>0){
+        rem = num % 10;
+        sum += rem;
+        num /= 10;
+    }
+
+    cout << "Sum of digits: " << sum;
+
+    return 0;
+}
+
+OUTPUT:
+Enter a number: 2
+Sum of digits: 2
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q25: C++ program to find area of circle</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    float radius, area;
+    cout<<"enter the radius of circle:";
+    cin>>radius;
+    area =3.14*radius*radius;
+    cout<<"area of circle:"<< area;
+    return 0;
+}
+
+OUTPUT:
+enter the radius of cirlce:
+20
+area of circle:1256
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q26:C++ Program to find area of rectangle</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+  #include&lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+   float length,width, area;
+    cout<<"enter the length of rectangle:";
+    cin>>length;
+    cout<<"enter the width of rectangle:";
+    cin>>width;
+    area=length*width;
+    cout<<"area of rectangle:"<< area;
+    return 0;
+}
+
+
+OUTPUT:
+enter the length of rectangle:12
+enter the width of rectangle:22
+area of rectangle:264
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q27:C++ Program to find area of triangle
+</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+   float base, height, area;
+    cout<<"enter the base of triangle:";
+    cin>>base;
+    cout<<"enter the height of triangle:";
+    cin>>height;
+    area= base/2*height;
+    cout<<"area of  triangle:"<< area;
+    return 0;
+}
+
+OUTPUT:
+enter the base of triangle:20
+enter the height of triangle:12
+area of  triangle:120
+
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q28:C++ Program to find area of equilateral triangle</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+   float side, area;
+    cout<<"enter the side of triangle:";
+    cin>>side;
+    area= (sqrt(3)/4)*side*side;
+    cout<<"area of  equilateral triangle:"<< area;
+    return 0;
+}
+OUTPUT:
+enter the side of triangle:3
+area of  equilateral triangle:3.89711
+
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q29:C++ Program to find area of rhombus</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+   float d1,d2, area;
+    cout<<"enter the 1 diagonal of rhombus:";
+    cin>>d1;
+    cout<<"enter the 2 diagonal of rhombus:";
+    cin>>d2;
+    area=(d1*d2)/2;
+
+    cout<<"area of rhombus:"<< area;
+    return 0;
+}
+OUTPUT:
+enter the 1 diagonal of rhombus:10
+enter the 2 diagonal of rhombus:20
+area of rhombus:100
+
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q30:C++ Program to find area of parallelogram</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+   float base, height, area;
+    cout<<"enter the base of parllelogram:";
+    cin>>base;
+    cout<<"enter the height of parellelogram:";
+    cin>>height;
+    area= base*height;
+    cout<<"area of  parellelogram:"<< area;
+    return 0;
+}
+
+OUTPUT:
+enter the base of parllelogram:4
+enter the height of parellelogram:3
+area of  parellelogram:12
+
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q31:C++ Program to find area of Prism</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+   float b, h, l,area;
+   cout<<"enter the length of prism:";
+   cin>>l;
+    cout<<"enter the base of prism:";
+    cin>>b;
+    cout<<"enter the height of prism:";
+    cin>>h;
+    area= 2*(l*b+l*h+b*h);
+    cout<<"area of  prism:"<< area;
+    return 0;
+}
+
+
+OUTPUT:
+enter the length of prism 3
+enter the base of prism: 2
+enter the height of prism:5
+area of  prism:62
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q32:C++ Program to find volume of sphere</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+#include<cmath>
+using namespace std;
+
+int main() {
+   float r, volume;
+   cout<<"enter the radius:";
+    cin>>r;
+    volume=(4/3)* 3.14* pow(r,3);
+    cout<<"volume of sphere is:"<< volume;
+    return 0;
+}
+
+OUTPUT:
+enter the radius:30
+volume of sphere is:84780
+
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q33:C++ Program to find volume of cylinder</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+#include <cmath>
+using namespace std;
+
+int main() {
+    float r, h, volume;
+
+    cout << "Enter radius: ";
+    cin >> r;
+
+    cout << "Enter height: ";
+    cin >> h;
+
+    volume = 3.14159 * r * r * h;
+
+    cout << "Volume of Cylinder = " << volume;
+
+    return 0;
+}
+
+OUTPUT:
+Enter radius: 20
+Enter height: 12
+Volume of Cylinder = 15079.6
+</code></pre>
+</div>
+<div class="question">
+    <p>Q34:C++ Program to find volume of cuboid</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    float l,b, h, volume;
+
+    cout << "Enter length: ";
+    cin >> l;
+
+    cout << "Enter height: ";
+    cin >> h;
+
+    cout << "Enter base: ";
+    cin >> b;
+
+
+    volume = l*b*h;
+    cout << "Volume of Cuboid = " << volume;
+
+    return 0;
+}
+
+OUTPUT:
+Enter length: 30
+Enter height: 12
+Enter base: 11
+Volume of Cuboid = 3960
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q35:C++ Program to find volume of cone</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    float r, h, volume;
+
+    cout << "Enter radius of cone: ";
+    cin >> r;
+
+    cout << "Enter height: ";
+    cin >> h;
+
+    volume = (1.0/3)*3.14*r*r*h;
+    cout << "Volume of Cone = " << volume;
+
+    return 0;
+}
+
+OUTPUT:
+Enter radius of cone: 45
+Enter height: 23
+Volume of Cone = 48748.5
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q36: C++ program to find surface area of cuboid</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    float l,h,w,area;
+
+    cout << "Enter length of cuboid: ";
+    cin >>l;
+
+    cout << "Enter height: ";
+    cin >> h;
+
+     cout << "Enter width: ";
+    cin >> w;
+
+    area=2*(l*w+l*h+w*h);
+    cout << "Volume of Cuboid = " << area;
+
+    return 0;
+}
+
+OUTPUT:
+Enter length of cuboid: 20
+Enter height: 12
+Enter width: 2
+Volume of Cuboid = 608
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q37:C++ program to find surface area of cylinder </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    float a,area;
+    cout << "Enter side length of cube: ";
+    cin>>a;
+    area=6*a*a;
+    cout << "Volume of Cube= " << area;
+
+    return 0;
+}
+
+OUTPUT:
+Enter side length of cube: 2
+Volume of Cube= 24
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q38:C++ program to find surface area of cube</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    float r,h,area;
+    cout << "Enter radius of cylinder: ";
+    cin>>r;
+    cout << "Enter height of cylinder: ";
+    cin>>h;
+    area=2*3.14*r*(r+h);
+    cout << "Volume of Cylinder= " << area;
+
+    return 0;
+}
+
+OUTPUT:
+Enter radius of cylinder: 20
+Enter height of cylinder: 12
+Volume of Cylinder= 4019.2
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q39:C++ program to calculate average marks</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+    #include&lt;iostream&gt;
+using namespace std;
+int main(){
+
+    float a,b,c,d, avg;
+    cout<<"enter your marks in english:";
+    cin>>a;
+
+    cout<<"enter your marks in maths:";
+    cin>>b;
+
+    cout<<"enter your marks in hindi:";
+    cin>>c;
+
+    cout<<"enter your marks in sst:";
+    cin>>d;
+
+    avg=(a+b+c+d)/4;
+    cout<<"average marks :"<< avg;
+
+    return 0;
+}
+
+OUTPUT:
+enter your marks in english:45
+enter your marks in maths:36
+enter your marks in hindi:57
+enter your marks in sst:68
+average marks :51.5
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q40:C++ program to check vowel or consonant</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    char ch;
+    cout<<"Enter a character: ";
+    cin>>ch;
+
+    if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||
+       ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+    {
+        cout<<"It is a Vowel";
+    }
+    else
+    {
+        cout<<"It is a Consonant";
+    }
+
+    return 0;
+}
+OUTPUT:
+Enter a character: b
+It is a Consonant
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q41:C++ program to sum of N numbers</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int n, i, sum=0;
+
+    cout<<"Enter value of N: ";
+    cin>>n;
+
+    for(i=1;i<=n;i++)
+    {
+        sum=sum+i;
+    }
+
+    cout<<"Sum of first "<< n<<" numbers = "<< sum;
+
+    return 0;
+}
+
+OUTPUT:
+Enter value of N: 5
+Sum of first 5 numbers = 15
+</code></pre>
+</div>
+<div class="question">
+    <p>Q42:C++ program to find factorial of any number</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int n, i;
+    long long fact=1;
+
+    cout<<"Enter a number: ";
+    cin>>n;
+
+    for(i=1;i<=n;i++)
+    {
+        fact=fact*i;
+    }
+
+    cout<<"Factorial = "<< fact;
+
+    return 0;
+}
+
+OUTPUT:
+Enter a number: 5
+Factorial = 120
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q43:C++ Program to calculate electricity bill</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int units;
+    float bill;
+
+    cout<<"Enter electricity units: ";
+    cin>>units;
+
+    if(units<=100)
+        bill=units*1.5;
+    else if(units<=200)
+        bill=100*1.5+(units-100)*2;
+    else if(units<=300)
+        bill=100*1.5+100*2+(units-200)*3;
+    else
+        bill=100*1.5+100*2+100*3+(units-300)*5;
+
+    cout<<"Total Electricity Bill = "<< bill;
+
+    return 0;
+}
+
+OUTPUT:
+Enter electricity units: 300
+Total Electricity Bill = 650
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q44:C++ Program To Calculate CGPA Percentage</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+   int cgpa,perc;
+   cout <<"enter cgpa:";
+   cin>>cgpa;
+   perc=cgpa*9.5;
+   cout<<"percentage:"<< perc<<"%";
+
+    return 0;
+}
+
+OUTPUT:
+enter cgpa:7
+percentage:66%
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q45:C++ Program to calculate compound interest</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+#include<cmath>
+using namespace std;
+
+int main()
+{
+    float p, r, t, CI, amount;
+
+    cout<<"Enter Principal amount: ";
+    cin>>p;
+
+    cout<<"Enter Rate of Interest: ";
+    cin>>r;
+
+    cout<<"Enter Time (in years): ";
+    cin>>t;
+
+    amount = p * pow((1 + r/100), t);
+    CI = amount - p;
+
+    cout<<"Compound Interest = "<< CI<< endl;
+    cout<<"Total Amount = "<< amount;
+
+    return 0;
+}
+
+OUTPUT:
+Enter Principal amount: 3500
+Enter Rate of Interest: 3
+Enter Time (in years): 2
+Compound Interest = 213.15
+Total Amount = 3713.15
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q46:C++ Program To Calculate Batting Average</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int runs, outs;
+    cout << "Enter total runs: ";
+    cin >> runs;
+    cout << "Enter number of times out: ";
+    cin >> outs;
+
+    if (outs != 0)
+        cout << "Batting Average = " << (float)runs / outs;
+    else
+        cout << "Average cannot be calculated";
+    return 0;
+}
+
+OUTPUT:
+Enter total runs: 245
+Enter number of times out: 4
+Batting Average = 61.25
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q47:C++ Program to Calculate Commission Percentage</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    float sales, commission;
+    cout << "Enter sales amount: ";
+    cin >> sales;
+
+    commission = sales * 0.1; // 10%
+    cout << "Commission = " << commission;
+    return 0;
+}
+
+OUTPUT:
+Enter sales amount: 4000
+Commission = 400
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q48: C++ Program To Find Distance Between Two Points</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+#include <cmath>
+using namespace std;
+
+int main() {
+    float x1, y1, x2, y2;
+    cin >> x1 >> y1 >> x2 >> y2;
+
+    float distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+    cout << "Distance = " << distance;
+    return 0;
+}
+
+OUTPUT:
+4
+5
+6
+7
+Distance = 2.82843
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q49: C++ Program To Calculate Power Of Number </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+#include <cmath>
+using namespace std;
+
+int main() {
+    int base, exp;
+    cin >> base >> exp;
+
+    cout << "Power = " << pow(base, exp);
+    return 0;
+}
+
+OUTPUT:
+45
+35
+Power = 7.28514e+057
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q50:Write a C++ program to take three numbers from the user and print the greatest number </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int a, b, c;
+    cin >> a >> b >> c;
+
+    if (a >= b && a >= c)
+        cout << "Greatest = " << a;
+    else if (b >= c)
+        cout << "Greatest = " << b;
+    else
+        cout << "Greatest = " << c;
+
+    return 0;
+}
+
+OUTPUT:
+45
+34
+23
+Greatest = 45
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q51:Write a C++ program to find the number of days in a month </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int month, year;
+    cin >> month >> year;
+
+    if (month == 2) {
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)
+            cout << "29 days";
+        else
+            cout << "28 days";
+    }
+    else if (month==4||month==6||month==9||month==11)
+        cout << "30 days";
+    else
+        cout << "31 days";
+
+    return 0;
+}
+
+OUTPUT:
+23
+2
+31 days
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q52:Write a C++ program to test a number is positive or negative </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    if (n >= 0)
+        cout << "Positive";
+    else
+        cout << "Negative";
+
+    return 0;
+}
+
+OUTPUT:
+34
+Positive
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q53:Write a C++ Program to accept number of week’s day (1-7) and print name of the day </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int day;
+    cin >> day;
+
+    switch(day) {
+        case 1: cout << "Monday"; break;
+        case 2: cout << "Tuesday"; break;
+        case 3: cout << "Wednesday"; break;
+        case 4: cout << "Thursday"; break;
+        case 5: cout << "Friday"; break;
+        case 6: cout << "Saturday"; break;
+        case 7: cout << "Sunday"; break;
+        default: cout << "Invalid";
+    }
+    return 0;
+}
+
+OUTPUT:
+4
+Thursday
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q54:Write a C++ program that takes a year from user and print whether that year is a leap year or not </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int year;
+    cin >> year;
+
+    if ((year%4==0 && year%100!=0) || year%400==0)
+        cout << "Leap Year";
+    else
+        cout << "Not Leap Year";
+
+    return 0;
+}
+
+OUTPUT:
+2026
+Not Leap Year
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q55:Write a C++ program to input 5 numbers from keyboard and find their sum and average </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n, sum=0;
+    cout<<"enter 5 numbers=";
+    for(int i=0;i<5;i++) {
+        cin >> n;
+        sum += n;
+    }
+    
+    cout << "Sum = " << sum;
+    cout << "\nAverage = " << sum/5.0;
+
+    return 0;
+}
+
+OUTPUT:
+2 3 4 56 6
+enter 5 numbers=Sum = 71
+Average = 14.2
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q56:Write a program in C++ to display the first 5 natural numbers </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    for(int i=1;i<=5;i++)
+        cout << i << " ";
+    return 0;
+}
+
+OUTPUT:
+1 2 3 4 5
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q57:Write a C++ program to check vowel or consonant </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    char ch;
+    cin >> ch;
+
+    if (ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||
+        ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U')
+        cout << "Vowel";
+    else
+        cout << "Consonant";
+
+    return 0;
+}
+
+
+OUTPUT:
+a
+Vowel
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q58:Write a C++ program to display the cube of the number upto given an integer </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    for(int i=1;i<=n;i++)
+        cout << "Cube of " << i << " = " << i*i*i << endl;
+
+    return 0;
+}
+
+OUTPUT:
+9
+Cube of 1 = 1
+Cube of 2 = 8
+Cube of 3 = 27
+Cube of 4 = 64
+Cube of 5 = 125
+Cube of 6 = 216
+Cube of 7 = 343
+Cube of 8 = 512
+Cube of 9 = 729
+</code>
+</pre>
+</div>
+
+
+<div class="question">
+    <p>Q59:Write a C++ program to display the n terms of odd natural number and their sum </p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n, sum=0;
+    cin >> n;
+
+    for(int i=1;i<=n;i++) {
+        int odd = 2*i-1;
+        cout << odd << " ";
+        sum += odd;
+    }
+
+    cout << "\nSum = " << sum;
+    return 0;
+}
+
+OUTPUT:
+5
+1 3 5 7 9 
+Sum = 25
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q60:Write a C++ program to display the multiplication table of a given integer</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    for(int i=1;i<=10;i++)
+        cout << n << " x " << i << " = " << n*i << endl;
+
+    return 0;
+}
+
+
+OUTPUT:
+2
+2 x 1 = 2
+2 x 2 = 4
+2 x 3 = 6
+2 x 4 = 8
+2 x 5 = 10
+2 x 6 = 12
+2 x 7 = 14
+2 x 8 = 16
+2 x 9 = 18
+2 x 10 = 20
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q61:Write a C++ program that reads an integer and check whether it is negative, zero, or positive</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    if (n > 0)
+        cout << "Positive";
+    else if (n < 0)
+        cout << "Negative";
+    else
+        cout << "Zero";
+
+    return 0;
+}
+
+OUTPUT:
+2
+Positive
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q62:Write a C++ program that reads an positive integer and count the number of digits</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, count=0;
+    cin >> n;
+
+    while(n!=0) {
+        n /= 10;
+        count++;
+    }
+
+    cout << "Digits = " << count;
+    return 0;
+}
+
+OUTPUT:
+1
+Digits = 1
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q63:Write a C++ program that accepts three numbers and check All numbers are equal or not</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int a,b,c;
+    cin >> a >> b >> c;
+
+    if (a==b && b==c)
+        cout << "All Equal";
+    else
+        cout << "Not Equal";
+
+    return 0;
+}
+
+OUTPUT:
+23
+34
+23
+Not Equal
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q64:Write a C++ program that accepts three numbers from the user and check if numbers are in "increasing” or “decreasing” order.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a,b,c;
+    cin >> a >> b >> c;
+
+    if (a< b && b< c)
+        cout << "Increasing";
+    else if (a>b && b>c)
+        cout << "Decreasing";
+    else
+        cout << "Neither";
+
+    return 0;
+}
+
+OUTPUT:
+23
+2
+1
+Decreasing
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q65:Write a C++ program that determines a student’s grade (81-100 : A, 61-80 : B, 41-60 : C, 0-40 : D)</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int marks;
+    cin >> marks;
+
+    if (marks>=81) cout<<"A";
+    else if (marks>=61) cout<<"B";
+    else if (marks>=41) cout<<"C";
+    else cout<<"D";
+
+    return 0;
+}
+
+OUTPUT:
+2
+D
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q66:Write a C++ program to create a simple calculator
+(1. ADDITION, 2. SUBTRACTION, 3. MULTIPLICATION, 4. DIVISION, 5. EXPONENTIAL, 6. PERCENTAGE, 7. EXIT)</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int choice;
+    float a,b;
+
+    do {
+        cout << "\n1.Add 2.Sub 3.Mul 4.Div 5.Pow 6.Percent 7.Exit\n";
+        cin >> choice;
+
+        if(choice>=1 && choice<=6) {
+            cin >> a >> b;
+        }
+
+        switch(choice) {
+            case 1: cout << a+b; break;
+            case 2: cout << a-b; break;
+            case 3: cout << a*b; break;
+            case 4: cout << a/b; break;
+            case 5: cout << pow(a,b); break;
+            case 6: cout << (a/b)*100; break;
+        }
+
+    } while(choice!=7);
+
+    return 0;
+}
+
+OUTPUT:
+1.Add 2.Sub 3.Mul 4.Div 5.Pow 6.Percent 7.Exit
+1
+2
+ 3
+5
+1.Add 2.Sub 3.Mul 4.Div 5.Pow 6.Percent 7.Exit
+ 4
+7
+5
+1.4
+1.Add 2.Sub 3.Mul 4.Div 5.Pow 6.Percent 7.Exit
+7
+</code></pre>
+</div>
+<div class="question">
+    <p>Q67:Write a C++ program to concatenate two string</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    string a,b;
+    cin >> a >> b;
+
+    cout << a + b;
+    return 0;
+}
+
+OUTPUT:
+23
+2
+232
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q68:Write a C++ program to convert all characters in a string to lowercase</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    string s;
+    cin >> s;
+
+    for(int i=0;i< s.length();i++)
+        s[i] = tolower(s[i]);
+
+    cout << s;
+    return 0;
+}
+
+
+OUTPUT:
+d 
+d
+
+</code>
+</pre>
+</div>
+<div class="question">
+    <p>Q69:Write a C++ program to convert all characters in a string to uppercase</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    string s;
+    cin >> s;
+
+    for(int i=0;i< s.length();i++)
+        s[i] = toupper(s[i]);
+
+    cout << s;
+    return 0;
+}
+
+OUTPUT:
+e
+E
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q70:Write a C++ program to trim a string (remove whitespaces)</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    string s;
+    getline(cin, s);
+
+    string result="";
+    for(char c : s) {
+        if(c!=' ')
+            result += c;
+    }
+
+    cout << result;
+    return 0;
+}
+
+OUTPUT:
+hola
+hola
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q71:Write a C++ program to get a substring of a given string between two specified positions</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    string str;
+    int start, end;
+
+    cout << "Enter string: ";
+    cin >> str;
+    cout << "Enter start and end positions: ";
+    cin >> start >> end;
+
+    cout << "Substring: " << str.substr(start, end - start + 1);
+    return 0;
+}
+
+OUTPUT:
+Enter string: hola
+Enter start and end positions: h a
+Substring: hola
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q72:Write a C++ program to replace all the ‘d’ characters with ‘f’ characters</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include <iostream>
+using namespace std;
+
+int main() {
+    string str;
+    cin >> str;
+
+    for(int i = 0; i < str.length(); i++) {
+        if(str[i] == 'd')
+            str[i] = 'f';
+    }
+
+    cout << str;
+    return 0;
+}
+
+OUTPUT:
+duplex
+fuplex
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q73:Write a C++ program to get the length of a given string</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include <iostream>
+using namespace std;
+
+int main() {
+    string str;
+    cin >> str;
+
+    cout << "Length = " << str.length();
+    return 0;
+}
+
+OUTPUT:
+helooo
+Length = 6   
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q74:Write a C++ program to print current date and time in the specified format</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+int main() {
+    time_t now = time(0);
+    char* dt = ctime(&now);
+
+    cout << "Current Date & Time: " << dt;
+    return 0;
+}
+
+OUTPUT:
+Current Date & Time: Sun Apr 05 15:05:54 2026
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q75:Write a C++ program to get the character at the given index within the String</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    string str;
+    int index;
+
+    cin >> str >> index;
+
+    if(index >= 0 && index < str.length())
+        cout << "Character = " << str[index];
+    else
+        cout << "Invalid index";
+
+    return 0;
+}
+
+OUTPUT:
+yooo
+hiii
+Character = y
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q76:Write a C++ program to remove a particular character from a str</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    string str;
+    char ch;
+    cin >> str >> ch;
+
+    string result = "";
+    for(char c : str) {
+        if(c != ch)
+            result += c;
+    }
+
+    cout << result;
+    return 0;
+}
+
+OUTPUT:
+hrllo
+r
+hllo
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q77:Write a C++ program to reverse a String</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include <iostream>
+using namespace std;
+
+int main() {
+    string str;
+    cin >> str;
+
+    for(int i = str.length()-1; i >= 0; i--)
+        cout << str[i];
+
+    return 0;
+}
+
+OUTPUT:
+sure
+erus
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q78:Write a C++ program to remove html tags from a string</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include <iostream>
+using namespace std;
+
+int main() {
+    string str;
+    getline(cin, str);
+
+    bool insideTag = false;
+
+    for(char c : str) {
+        if(c == '<')
+            insideTag = true;
+        else if(c == '>')
+            insideTag = false;
+        else if(!insideTag)
+            cout << c;
+    }
+
+    return 0;
+}
+
+OUTPUT:
+hola
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q79:Write a C++ program to count total number of lines from a string</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include <iostream>
+using namespace std;
+
+int main() {
+    string str;
+    int count = 1;
+
+    while(getline(cin, str)) {
+        count++;
+    }
+
+    cout << "Total lines = " << count;
+    return 0;
+}
+
+OUTPUT:
+
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q80:Write a C++ Program to Accept the Marks of a Student and find Total Marks and Percentage</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int m1, m2, m3, m4, m5;
+    int total;
+    float percentage;
+
+    cout << "Enter 5 subject marks: ";
+    cin >> m1 >> m2 >> m3 >> m4 >> m5;
+
+    total = m1 + m2 + m3 + m4 + m5;
+    percentage = total / 5.0;
+
+    cout << "Total = " << total << endl;
+    cout << "Percentage = " << percentage << "%";
+
+    return 0;
+}
+
+OUTPUT:
+Enter 5 subject marks: 89
+78
+67
+56
+45
+Total = 335
+Percentage = 67%
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q81:Write a C++ program to print numbers from 1 to 10 using loop</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include <iostream>
+using namespace std;
+
+int main() {
+    for(int i=1;i<=10;i++)
+        cout << i << " ";
+    return 0;
+}
+
+OUTPUT:
+1 2 3 4 5 6 7 8 9 10 
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q82:Write a C++ program to calculate the sum of first 10 natural number using loop</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int sum = 0;
+
+    for(int i = 1; i <= 10; i++) {
+        sum = sum + i;
+    }
+
+    cout << "Sum of first 10 natural numbers = " << sum;
+
+    return 0;
+}
+
+OUTPUT:
+Sum of first 10 natural numbers = 55
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q83:Write a C++ program to print multiplication table of given number</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+
+    for(int i=1;i<=10;i++)
+        cout << n << " x " << i << " = " << n*i << endl;
+
+    return 0;
+}
+
+OUTPUT:
+2
+2 x 1 = 2
+2 x 2 = 4
+2 x 3 = 6
+2 x 4 = 8
+2 x 5 = 10
+2 x 6 = 12
+2 x 7 = 14
+2 x 8 = 16
+2 x 9 = 18
+2 x 10 = 20
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q84:Write a C++ program to find the factorial value of any number entered through the keyboard</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n, i;
+    long long fact=1;
+
+    cout<<"Enter a number: ";
+    cin>>n;
+
+    for(i=1;i<=n;i++)
+    {
+        fact=fact*i;
+    }
+
+    cout<<"Factorial = "<< fact;
+
+    return 0;
+}
+
+OUTPUT:
+Enter a number: 5
+Factorial = 120
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q85:Write a C++ program that prompts the user to input an integer and then outputs the number with the digits reversed order</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+   int num, rev = 0, rem;
+
+    cout << "Enter an integer: ";
+    cin >> num;
+
+    while(num != 0) {
+        rem = num % 10;
+        rev = rev * 10 + rem;
+        num = num / 10;
+    }
+
+    cout << "Reversed number = " << rev;
+
+    return 0;
+}
+
+
+
+OUTPUT:
+Enter an integer: 2
+Reversed number = 2
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q86:Write a C++ program that reads a set of integers, and then prints the sum of the even and odd integers using loop</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n, num, evenSum = 0, oddSum = 0;
+
+    cout << "How many numbers? ";
+    cin >> n;
+
+    for(int i = 1; i <= n; i++) {
+        cout << "Enter number: ";
+        cin >> num;
+
+        if(num % 2 == 0)
+            evenSum += num;
+        else
+            oddSum += num;
+    }
+
+    cout << "Sum of even numbers = " << evenSum << endl;
+    cout << "Sum of odd numbers = " << oddSum;
+
+    return 0;
+}
+
+OUTPUT:
+How many numbers? 
+3
+Enter number: 2
+Enter number: 1
+Enter number: 2
+Sum of even numbers = 4
+Sum of odd numbers = 1
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q87:Write a C++ program to check whether the number is a prime number or not</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int num, i;
+    bool isPrime = true;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    if(num <= 1)
+        isPrime = false;
+    else {
+        for(i = 2; i <= num/2; i++) {
+            if(num % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+
+    if(isPrime)
+        cout << "Prime number";
+    else
+        cout << "Not a prime number";
+
+    return 0;
+}
+
+OUTPUT:
+Enter a number: 
+3
+Prime number
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q88:Write a C++ program to calculate HCF of Two given numbers using loop</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int a, b, hcf;
+
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+
+    for(int i = 1; i <= a && i <= b; i++) {
+        if(a % i == 0 && b % i == 0)
+            hcf = i;
+    }
+
+    cout << "HCF = " << hcf;
+
+    return 0;
+}
+
+OUTPUT:
+Enter two numbers: 3 4
+HCF = 1
+
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q89:Write a C++ program to enter the numbers till the user wants and at the end it should display the count of positive, negative and zeros</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n, num;
+    int pos = 0, neg = 0, zero = 0;
+
+    cout << "How many numbers? ";
+    cin >> n;
+
+    for(int i = 1; i <= n; i++) {
+        cout << "Enter number: ";
+        cin >> num;
+
+        if(num > 0)
+            pos++;
+        else if(num < 0)
+            neg++;
+        else
+            zero++;
+    }
+
+    cout << "Positive numbers = " << pos << endl;
+    cout << "Negative numbers = " << neg << endl;
+    cout << "Zeros = " << zero;
+
+    return 0;
+}
+
+
+OUTPUT:
+How many numbers? 2
+Enter number: 3
+Enter number: 4
+Positive numbers = 2
+Negative numbers = 0
+Zeros = 0
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q90:Write a C++ program to enter the numbers till the user wants and at the end the program should display the largest and smallest numbers entered</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n, num, largest, smallest;
+
+    cout << "How many numbers? ";
+    cin >> n;
+
+    cout << "Enter number: ";
+    cin >> num;
+
+    largest = smallest = num;
+
+    for(int i = 2; i <= n; i++) {
+        cout << "Enter number: ";
+        cin >> num;
+
+        if(num > largest)
+            largest = num;
+
+        if(num < smallest)
+            smallest = num;
+    }
+
+    cout << "Largest number = " << largest << endl;
+    cout << "Smallest number = " << smallest;
+
+    return 0;
+}
+
+
+OUTPUT:
+How many numbers? 3
+Enter number: 2
+Enter number: 1
+Enter number: 5
+Largest number = 5
+Smallest number = 1
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q91:Write a C++ program to print out all Armstrong numbers between 1 to 600 using loop</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int num, temp, sum, r;
+
+    for(num = 1; num <= 600; num++) {
+        temp = num;
+        sum = 0;
+
+        while(temp > 0) {
+            r = temp % 10;
+            sum += r*r*r;
+            temp /= 10;
+        }
+
+        if(sum == num)
+            cout << num << " ";
+    }
+}
+
+
+OUTPUT:
+1 153 370 371 407 
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q92:Write a C++ program to count total number of notes in entered amount using loop</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include<iostream>
+using namespace std;
+
+int main() {
+    int amount;
+    cout << "Enter amount: ";
+    cin >> amount;
+
+    cout << "2000 notes: " << amount/2000 << endl;
+    amount %= 2000;
+
+    cout << "500 notes: " << amount/500 << endl;
+    amount %= 500;
+
+    cout << "200 notes: " << amount/200 << endl;
+    amount %= 200;
+
+    cout << "100 notes: " << amount/100 << endl;
+    amount %= 100;
+
+    cout << "50 notes: " << amount/50 << endl;
+    amount %= 50;
+
+    cout << "20 notes: " << amount/20 << endl;
+    amount %= 20;
+
+    cout << "10 notes: " << amount/10 << endl;
+}
+
+OUTPUT:
+Enter amount: 24
+2000 notes: 0
+500 notes: 0
+200 notes: 0
+100 notes: 0
+50 notes: 0
+20 notes: 1
+10 notes: 0
+
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q93:Write a C++ program to print Fibonacci series of n terms where n is input by user using loop</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n, a=0, b=1, c;
+    cout << "Enter n: ";
+    cin >> n;
+
+    for(int i=1; i<=n; i++) {
+        cout << a << " ";
+        c = a + b;
+        a = b;
+        b = c;
+    }
+}
+
+
+
+OUTPUT:
+Enter n: 3
+0 1 1 
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q94:Write a C++ program to calculate the sum of following series where n is input by user</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n, sum = 0;
+    cout << "Enter n: ";
+    cin >> n;
+
+    for(int i=1; i<=n; i++) {
+        sum += i;
+    }
+
+    cout << "Sum = " << sum;
+}
+
+OUTPUT:
+Enter n: 3
+Sum = 6
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q95:Write a C++ method to compute the average of three numbers</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include<iostream>
+using namespace std;
+
+float average(float a, float b, float c) {
+    return (a + b + c) / 3;
+}
+
+int main() {
+    cout << average(10, 20, 30);
+}
+
+OUTPUT:
+20
+</code>
+</pre>
+</div>
+
+
+<div class="question">
+    <p>Q96:Write a C++ method to find the smallest number among three numbers</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int smallest(int a, int b, int c) {
+    if(a <= b && a <= c) return a;
+    else if(b <= a && b <= c) return b;
+    else return c;
+}
+
+int main() {
+    cout << smallest(5, 2, 8);
+}
+
+OUTPUT:
+2
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q97:Write a C++ method to check whether an year entered by the user is a leap year or not</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+bool isLeap(int year) {
+    return (year%4==0 && year%100!=0) || (year%400==0);
+}
+
+int main() {
+    int year;
+    cin >> year;
+
+    if(isLeap(year))
+        cout << "Leap Year";
+    else
+        cout << "Not Leap Year";
+}
+
+OUTPUT:
+22000
+Leap Year
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q98:Write a C++ program to accept a float value of number and return a rounded float value</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+    float num;
+    cin >> num;
+    cout << round(num);
+}
+
+
+OUTPUT:
+2.453
+2
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q99:Write a C++ method to compute the sum of the digits in an integer</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int sumDigits(int n) {
+    int sum = 0;
+    while(n > 0) {
+        sum += n % 10;
+        n /= 10;
+    }
+    return sum;
+}
+
+int main() {
+    cout << sumDigits(1234);
+}
+
+OUTPUT:
+10
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q100:Write a C++ method to calculate the area of a triangle</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+float area(float b, float h) {
+    return 0.5 * b * h;
+}
+
+int main() {
+    cout << area(5, 4);
+}
+
+OUTPUT:
+10
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q101:Write a C++ method to find the area of a pentagon</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+float pentagonArea(float s) {
+    return (5 * s * s) / (4 * tan(3.14159/5));
+}
+
+int main() {
+    cout << pentagonArea(6);
+}
+
+OUTPUT:
+61.9373
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q102:Write a C++ method to find number is even number or not</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+bool isEven(int n) {
+    return n % 2 == 0;
+}
+
+int main() {
+    if(isEven(4))
+        cout << "Even";
+    else
+        cout << "Odd";
+}
+
+OUTPUT:
+Even
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q103:Write a C++ method to check numbers is palindrome number or not</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+bool isPalindrome(int n) {
+    int rev=0, temp=n;
+    while(temp>0) {
+        rev = rev*10 + temp%10;
+        temp/=10;
+    }
+    return rev == n;
+}
+
+int main() {
+    if(isPalindrome(121))
+        cout << "Palindrome";
+    else
+        cout << "Not Palindrome";
+}
+
+OUTPUT:
+Palindrome
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q104:Write a C++ method to displays prime numbers between 1 to 20</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    for(int i=2; i<=20; i++) {
+        int flag=1;
+        for(int j=2; j< i; j++) {
+            if(i%j==0) {
+                flag=0;
+                break;
+            }
+        }
+        if(flag)
+            cout << i << " ";
+    }
+}
+
+OUTPUT:
+2 3 5 7 11 13 17 19 
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q105:Write a C++ method to find GCD and LCM of Two Numbers</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int gcd(int a, int b) {
+    while(b!=0) {
+        int t = b;
+        b = a % b;
+        a = t;
+    }
+    return a;
+}
+
+int main() {
+    int a=12, b=18;
+    int g = gcd(a,b);
+    cout << "GCD = " << g << endl;
+    cout << "LCM = " << (a*b)/g;
+}
+
+OUTPUT:
+GCD = 6
+LCM = 36
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q106:Write a C++ method to find factorial using recursion</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include<iostream>
+using namespace std;
+
+int fact(int n) {
+    if(n==0) return 1;
+    return n * fact(n-1);
+}
+
+int main() {
+    cout << fact(5);
+}
+
+OUTPUT:
+120
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q107:Write a C++ program to reverse an integer number</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n, rev=0;
+    cin >> n;
+
+    while(n>0) {
+        rev = rev*10 + n%10;
+        n/=10;
+    }
+
+    cout << rev;
+}
+
+OUTPUT:
+10
+1
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q108:Write a C++ program to round a float number to specified decimals</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n, rev=0;
+    cin >> n;
+
+    while(n>0) {
+        rev = rev*10 + n%10;
+        n/=10;
+    }
+
+    cout << rev;
+}
+
+OUTPUT:
+34
+43
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q109:Write a C++ program to test if a double number is an integer</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include<iostream>
+using namespace std;
+
+int main() {
+    double n;
+    cin >> n;
+
+    if(n == (int)n)
+        cout << "Integer";
+    else
+        cout << "Not Integer";
+}
+
+OUTPUT:
+34
+Integer
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q110:Write a C++ program to round up the result of integer division</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+    int a, b;
+    cin >> a >> b;
+
+    cout << ceil((float)a/b);
+}
+
+OUTPUT:
+35
+23
+2
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q111:Write a C++ program to convert Roman number to an integer number</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int value(char r) {
+    if(r=='I') return 1;
+    if(r=='V') return 5;
+    if(r=='X') return 10;
+    if(r=='L') return 50;
+    if(r=='C') return 100;
+    if(r=='D') return 500;
+    if(r=='M') return 1000;
+    return 0;
+}
+
+int main() {
+    string roman;
+    cin >> roman;
+
+    int total = 0;
+
+    for(int i=0; i< roman.length(); i++) {
+        if(value(roman[i]) < value(roman[i+1]))
+            total -= value(roman[i]);
+        else
+            total += value(roman[i]);
+    }
+
+    cout << total;
+}
+
+OUTPUT:
+2
+0
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q112:Write a C++ program to convert a float value to absolute value</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main() {
+    float num;
+    cin >> num;
+
+    cout << fabs(num);
+}
+
+OUTPUT:
+34
+34
+</code>
+</pre>
+</div>
+
+<div class="question">
+    <p>Q113:Create a class entering the command line arguments from the user and show all the arguments as output.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+  <pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+class Demo {
+public:
+    void display(int argc, char* argv[]) {
+        cout << "Arguments are:\n";
+        for(int i=0; i< argc; i++) {
+            cout << argv[i] << endl;
+        }
+    }
+};
+
+int main(int argc, char* argv[]) {
+    Demo obj;
+    obj.display(argc, argv);
+}
+
+OUTPUT:
+Arguments are:
+</code>
+</pre>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

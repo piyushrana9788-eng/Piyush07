@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Single Dimension Arrays</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Single Dimension Arrays</h1>
+
+<div class="question">
+    <p>Q1:Program to copy all elements of one array into another array.</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n], b[n];
+
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    // Copy elements
+    for(int i = 0; i < n; i++) {
+        b[i] = a[i];
+    }
+
+    cout << "Copied array: ";
+    for(int i = 0; i < n; i++) {
+        cout << b[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 1
+2
+Copied array: 1 2 
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q2:Program to find the frequency of each element in the array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    bool visited[n];
+
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+        visited[i] = false;
+    }
+
+    for(int i = 0; i < n; i++) {
+        if(visited[i] == false) {
+            int count = 1;
+            for(int j = i + 1; j < n; j++) {
+                if(a[i] == a[j]) {
+                    count++;
+                    visited[j] = true;
+                }
+            }
+            cout << a[i] << " appears " << count << " time(s)" << endl;
+        }
+    }
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 23
+12
+23 appears 1 time(s)
+12 appears 1 time(s)
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q3:Program to left rotate the elements of an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int times;
+    cout << "Enter number of times to left rotate: ";
+    cin >> times;
+
+    for(int t = 0; t < times; t++) {
+        int first = a[0];
+        for(int i = 0; i < n - 1; i++) {
+            a[i] = a[i + 1];
+        }
+        a[n - 1] = first;
+    }
+
+    cout << "After left rotation: ";
+    for(int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 1
+23
+Enter number of times to left rotate: 2
+After left rotation: 1 23 
+
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q4:Program to print the duplicate elements of an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    cout << "Duplicate elements: ";
+    for(int i = 0; i < n; i++) {
+        for(int j = i + 1; j < n; j++) {
+            if(a[i] == a[j]) {
+                cout << a[i] << " ";
+                break;
+            }
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 12
+23
+Duplicate elements:
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q5:Program to print the elements of an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    cout << "Array elements: ";
+    for(int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 12
+12
+Array elements: 12 12 
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q6:Program to print the elements of an array in reverse order</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    cout << "Array in reverse order: ";
+    for(int i = n - 1; i >= 0; i--) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 12
+34
+Array in reverse order: 34 12 
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q7:Program to print the elements of an array present on even position</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    // Even positions: index 1, 3, 5... (position 2, 4, 6...)
+    cout << "Elements at even positions: ";
+    for(int i = 1; i < n; i += 2) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 23
+12
+Elements at even positions: 12
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q8:Program to print the elements of an array present on odd position</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    // Odd positions: index 0, 2, 4... (position 1, 3, 5...)
+    cout << "Elements at odd positions: ";
+    for(int i = 0; i < n; i += 2) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 12
+5
+Elements at odd positions: 12 
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q9:Program to print the largest element in an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int largest = a[0];
+    for(int i = 1; i < n; i++) {
+        if(a[i] > largest) {
+            largest = a[i];
+        }
+    }
+
+    cout << "Largest element: " << largest << endl;
+
+    return 0;
+}
+
+OUTPUT:
+
+Enter number of elements: 2
+Enter elements: 3
+4
+Largest element: 4
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q10:Program to print the smallest element in an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int smallest = a[0];
+    for(int i = 1; i < n; i++) {
+        if(a[i] < smallest) {
+            smallest = a[i];
+        }
+    }
+
+    cout << "Smallest element: " << smallest << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 4
+5
+Smallest element: 4
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q11:Program to print the number of elements present in an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    cout << "Number of elements in array: " << n << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 12
+4
+Number of elements in array: 2
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q12:Program to print the sum of all the items of the array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int sum = 0;
+    for(int i = 0; i < n; i++) {
+        sum += a[i];
+    }
+
+    cout << "Sum of all elements: " << sum << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 34
+45
+Sum of all elements: 79
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q13:Program to right rotate the elements of an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int times;
+    cout << "Enter number of times to right rotate: ";
+    cin >> times;
+
+    for(int t = 0; t < times; t++) {
+        int last = a[n - 1];
+        for(int i = n - 1; i > 0; i--) {
+            a[i] = a[i - 1];
+        }
+        a[0] = last;
+    }
+
+    cout << "After right rotation: ";
+    for(int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 3
+Enter elements: 23
+1
+2
+Enter number of times to right rotate: 3
+After right rotation: 23 1 2 
+
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q14:Program to sort the elements of an array in ascending order</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    // Bubble sort ascending
+    for(int i = 0; i < n - 1; i++) {
+        for(int j = 0; j < n - i - 1; j++) {
+            if(a[j] > a[j + 1]) {
+                int temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "Sorted array (ascending): ";
+    for(int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 12
+34
+Sorted array (ascending): 12 34
+</code></pre>
+</div>
+
+
+<div class="question">
+    <p>Q15:Program to sort the elements of an array in descending order</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    // Bubble sort descending
+    for(int i = 0; i < n - 1; i++) {
+        for(int j = 0; j < n - i - 1; j++) {
+            if(a[j] < a[j + 1]) {
+                int temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "Sorted array (descending): ";
+    for(int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 21
+4
+Sorted array (descending): 21 4 
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q16:Program to Find 3rd Largest Number in an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    // Sort in descending order
+    for(int i = 0; i < n - 1; i++) {
+        for(int j = 0; j < n - i - 1; j++) {
+            if(a[j] < a[j + 1]) {
+                int temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+
+    cout << "3rd Largest element: " << a[2] << endl;
+
+    return 0;
+}
+
+
+OUTPUT:
+Enter number of elements: 
+2
+Enter elements: 3
+34
+3rd Largest element: 6422244
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q17:Program to Find 2nd Largest Number in an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+    #include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int largest = a[0], second = -1;
+
+    for(int i = 1; i < n; i++) {
+        if(a[i] > largest) {
+            second = largest;
+            largest = a[i];
+        } else if(a[i] > second && a[i] != largest) {
+            second = a[i];
+        }
+    }
+
+    cout << "2nd Largest element: " << second << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 12
+324
+2nd Largest element: 12
+
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q18:Program to Find Largest Number in an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int largest = a[0];
+    for(int i = 1; i < n; i++) {
+        if(a[i] > largest) {
+            largest = a[i];
+        }
+    }
+
+    cout << "Largest Number: " << largest << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 1
+2
+Largest Number: 2
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q19:C++ Program Find 2nd Smallest Number in an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int smallest = a[0], second = 99999;
+
+    for(int i = 1; i < n; i++) {
+        if(a[i] < smallest) {
+            second = smallest;
+            smallest = a[i];
+        } else if(a[i] < second && a[i] != smallest) {
+            second = a[i];
+        }
+    }
+
+    cout << "2nd Smallest element: " << second << endl;
+
+    return 0;
+}
+
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 12
+4
+2nd Smallest element: 4
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q20:Program to Find Smallest Number in an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int smallest = a[0];
+    for(int i = 1; i < n; i++) {
+        if(a[i] < smallest) {
+            smallest = a[i];
+        }
+    }
+
+    cout << "Smallest Number: " << smallest << endl;
+
+    return 0;
+}
+
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 1
+2
+Smallest Number: 1
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q21:Program to Remove Duplicate Element in an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    cout << "Array after removing duplicates: ";
+    for(int i = 0; i < n; i++) {
+        bool isDuplicate = false;
+        for(int j = 0; j < i; j++) {
+            if(a[i] == a[j]) {
+                isDuplicate = true;
+                break;
+            }
+        }
+        if(!isDuplicate) {
+            cout << a[i] << " ";
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 1
+4
+Array after removing duplicates: 1 4 
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q22:Program to Print Odd and Even Numbers from an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    cout << "Even numbers: ";
+    for(int i = 0; i < n; i++) {
+        if(a[i] % 2 == 0) {
+            cout << a[i] << " ";
+        }
+    }
+    cout << endl;
+
+    cout << "Odd numbers: ";
+    for(int i = 0; i < n; i++) {
+        if(a[i] % 2 != 0) {
+            cout << a[i] << " ";
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 3
+4
+Even numbers: 4 
+Odd numbers: 3
+
+</code></pre>
+</div>
+ 
+<div class="question">
+    <p>Q23:Write a C++ program to swap the first and last elements of an array and create a new array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n], b[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+        b[i] = a[i];
+    }
+
+    // Swap first and last in new array
+    int temp = b[0];
+    b[0] = b[n - 1];
+    b[n - 1] = temp;
+
+    cout << "Original array: ";
+    for(int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    cout << "New array after swapping first and last: ";
+    for(int i = 0; i < n; i++) {
+        cout << b[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 12
+3
+Original array: 12 3 
+New array after swapping first and last: 3 12
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q24:Write a C++ program to count the number of even and odd elements in a given array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+ #include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int evenCount = 0, oddCount = 0;
+    for(int i = 0; i < n; i++) {
+        if(a[i] % 2 == 0) {
+            evenCount++;
+        } else {
+            oddCount++;
+        }
+    }
+
+    cout << "Count of even elements: " << evenCount << endl;
+    cout << "Count of odd elements: " << oddCount << endl;
+
+    return 0;
+}
+
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 1
+4
+Count of even elements: 1
+Count of odd elements: 1
+
+</code></pre>
+</div>    
+
+
+<div class="question">
+    <p>Q25:Write a C++ program to sum values of an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int sum = 0;
+    for(int i = 0; i < n; i++) {
+        sum += a[i];
+    }
+
+    cout << "Sum of array values: " << sum << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 1
+4
+Sum of array values: 5
+</code></pre>
+</div>  
+
+<div class="question">
+    <p>Q26:Write a C++ program to find the index of an array element</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int key;
+    cout << "Enter element to search: ";
+    cin >> key;
+
+    bool found = false;
+    for(int i = 0; i < n; i++) {
+        if(a[i] == key) {
+            cout << "Element " << key << " found at index: " << i << endl;
+            found = true;
+        }
+    }
+
+    if(!found) {
+        cout << "Element not found in array." << endl;
+    }
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 45
+34
+Enter element to search: 2
+Element not found in array.
+</code></pre>
+</div>  
+
+<div class="question">
+    <p>Q27:Write a C++ program to calculate the average value of array elements</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int sum = 0;
+    for(int i = 0; i < n; i++) {
+        sum += a[i];
+    }
+
+    float avg = (float)sum / n;
+    cout << "Average of array elements: " << avg << endl;
+
+    return 0;
+}
+
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 12
+4
+Average of array elements: 8
+</code></pre>
+</div>  
+
+<div class="question">
+    <p>Q28:Write a C++ program to test if an array contains a specific value</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int key;
+    cout << "Enter value to search: ";
+    cin >> key;
+
+    bool found = false;
+    for(int i = 0; i < n; i++) {
+        if(a[i] == key) {
+            found = true;
+            break;
+        }
+    }
+
+    if(found) {
+        cout << "Yes, " << key << " is present in the array." << endl;
+    } else {
+        cout << "No, " << key << " is not present in the array." << endl;
+    }
+
+    return 0;
+}
+
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 12
+4
+Enter value to search: 4
+Yes, 4 is present in the array.
+</code></pre>
+</div> 
+
+<div class="question">
+    <p>Q29:Write a C++ program to find the maximum and minimum value of an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int maxVal = a[0], minVal = a[0];
+    for(int i = 1; i < n; i++) {
+        if(a[i] > maxVal) maxVal = a[i];
+        if(a[i] < minVal) minVal = a[i];
+    }
+
+    cout << "Maximum value: " << maxVal << endl;
+    cout << "Minimum value: " << minVal << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 12
+
+4
+Maximum value: 12
+Minimum value: 4
+</code></pre>
+</div> 
+
+<div class="question">
+    <p>Q30:Write a C++ program to insert an element (specific position) into an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n + 1];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int pos, val;
+    cout << "Enter position to insert (1 to " << n + 1 << "): ";
+    cin >> pos;
+    cout << "Enter value to insert: ";
+    cin >> val;
+
+    // Shift elements to the right
+    for(int i = n; i >= pos; i--) {
+        a[i] = a[i - 1];
+    }
+    a[pos - 1] = val;
+
+    cout << "Array after insertion: ";
+    for(int i = 0; i <= n; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 12
+4
+Enter position to insert (1 to 3): 2
+Enter value to insert: 12
+Array after insertion: 12 12 4 
+</code></pre>
+</div> 
+
+
+<div class="question">
+    <p>Q31:Write a C++ program to reverse an array of integer values</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    
+    int start = 0, end = n - 1;
+    while(start < end) {
+        int temp = a[start];
+        a[start] = a[end];
+        a[end] = temp;
+        start++;
+        end--;
+    }
+
+    cout << "Reversed array: ";
+    for(int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 12
+42
+Reversed array:
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q32:Write a C++ program to find the common elements between two arrays</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n1, n2;
+    cout << "Enter number of elements in first array: ";
+    cin >> n1;
+    int a[n1];
+    cout << "Enter elements of first array: ";
+    for(int i = 0; i < n1; i++) cin >> a[i];
+
+    cout << "Enter number of elements in second array: ";
+    cin >> n2;
+    int b[n2];
+    cout << "Enter elements of second array: ";
+    for(int i = 0; i < n2; i++) cin >> b[i];
+
+    cout << "Common elements: ";
+    for(int i = 0; i < n1; i++) {
+        for(int j = 0; j < n2; j++) {
+            if(a[i] == b[j]) {
+                cout << a[i] << " ";
+                break;
+            }
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements in first array: 2 23 3
+Enter elements of first array: Enter number of elements in second array: 3 3 3
+Enter elements of second array: 2
+Common elements: 3 
+</code></pre>
+</div>
+
+<div class="question">
+    <p>Q33:Write a C++ program to find the duplicate values of an array of integer values</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    cout << "Duplicate values: ";
+    bool printedAny = false;
+    for(int i = 0; i < n; i++) {
+        for(int j = i + 1; j < n; j++) {
+            if(a[i] == a[j]) {
+                cout << a[i] << " ";
+                printedAny = true;
+                break;
+            }
+        }
+    }
+    if(!printedAny) cout << "No duplicates found.";
+    cout << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 3
+Enter elements: 2
+12
+
+4
+Duplicate values: No duplicates found.
+ </code></pre>
+</div>   
+
+<div class="question">
+    <p>Q34:Write a C++ program to find second largest number from the array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int largest = a[0], second = -99999;
+    for(int i = 1; i < n; i++) {
+        if(a[i] > largest) {
+            second = largest;
+            largest = a[i];
+        } else if(a[i] > second && a[i] != largest) {
+            second = a[i];
+        }
+    }
+
+    cout << "Second Largest Number: " << second << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 3
+1
+Second Largest Number: 1
+</code></pre>
+</div>  
+
+<div class="question">
+    <p>Q35:Write a C++ program to find second lowest number from the array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int smallest = a[0], second = 99999;
+    for(int i = 1; i < n; i++) {
+        if(a[i] < smallest) {
+            second = smallest;
+            smallest = a[i];
+        } else if(a[i] < second && a[i] != smallest) {
+            second = a[i];
+        }
+    }
+
+    cout << "Second Lowest Number: " << second << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 12
+4
+Second Lowest Number: 4
+</code></pre>
+</div>  
+
+<div class="question">
+    <p>Q36:Write a C++ program to find the number of even and odd integers in a given array of integers</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int evenCount = 0, oddCount = 0;
+    for(int i = 0; i < n; i++) {
+        if(a[i] % 2 == 0) {
+            evenCount++;
+        } else {
+            oddCount++;
+        }
+    }
+
+    cout << "Number of even integers: " << evenCount << endl;
+    cout << "Number of odd integers: " << oddCount << endl;
+
+    return 0;
+}
+
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 12
+4
+Number of even integers: 2
+Number of odd integers: 0
+
+</code></pre>
+</div>  
+
+<div class="question">
+    <p>Q37:Write a C++ program to get the difference between the largest and smallest values in an array of integers</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int maxVal = a[0], minVal = a[0];
+    for(int i = 1; i < n; i++) {
+        if(a[i] > maxVal) maxVal = a[i];
+        if(a[i] < minVal) minVal = a[i];
+    }
+
+    cout << "Largest value: " << maxVal << endl;
+    cout << "Smallest value: " << minVal << endl;
+    cout << "Difference: " << maxVal - minVal << endl;
+
+    return 0;
+}
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 3
+2
+Largest value: 3
+Smallest value: 2
+Difference: 1
+
+</code></pre>
+</div> 
+
+<div class="question">
+    <p>Q38:Write a C++ program to segregate all 0s on left side and all 1s on right side of a given array of 0s and 1s</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements (only 0s and 1s): ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements (0 or 1): ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int left = 0, right = n - 1;
+    while(left < right) {
+        if(a[left] == 0) {
+            left++;
+        } else if(a[right] == 1) {
+            right--;
+        } else {
+            
+            int temp = a[left];
+            a[left] = a[right];
+            a[right] = temp;
+            left++;
+            right--;
+        }
+    }
+
+    cout << "Array after segregation: ";
+    for(int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements (only 0s and 1s): 21
+Enter elements (0 or 1): 12
+2
+313
+13
+1
+0
+ 002 1]
+Array after segregation: 16 96 907008498 1878003808 43 
+0 -1 1878003872 0 -1 0 10 1878003872 16777216 1 2 1 13 
+313 2 12
+</code></pre>
+</div> 
+
+
+<div class="question">
+    <p>Q39:Write a C++ program to cyclically rotate a given array clockwise by one</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    int last = a[n - 1];
+    for(int i = n - 1; i > 0; i--) {
+        a[i] = a[i - 1];
+    }
+    a[0] = last;
+
+    cout << "Array after one clockwise rotation: ";
+    for(int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 3
+1
+Array after one clockwise rotation: 1 3 
+
+</code></pre>
+</div> 
+
+
+<div class="question">
+    <p>Q40:Write a C++ program to print all unique element in an array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    cout << "Unique elements: ";
+    for(int i = 0; i < n; i++) {
+        bool isDuplicate = false;
+        for(int j = 0; j < n; j++) {
+            if(i != j && a[i] == a[j]) {
+                isDuplicate = true;
+                break;
+            }
+        }
+        if(!isDuplicate) {
+            cout << a[i] << " ";
+        }
+    }
+    cout << endl;
+
+    return 0;
+}
+
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 1
+
+3
+Unique elements: 1 3 
+    </code></pre>
+</div> 
+
+<div class="question">
+    <p>Q41:Write a C++ Program to Sort the Array in an Ascending Order</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    for(int i = 0; i < n - 1; i++) {
+        int minIndex = i;
+        for(int j = i + 1; j < n; j++) {
+            if(a[j] < a[minIndex]) {
+                minIndex = j;
+            }
+        }
+        int temp = a[i];
+        a[i] = a[minIndex];
+        a[minIndex] = temp;
+    }
+
+    cout << "Array sorted in ascending order: ";
+    for(int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 1
+
+3
+Array sorted in ascending order: 1 3 
+    </code></pre>
+</div> 
+
+<div class="question">
+    <p>Q42:Write a C++ Program to Sort the Array in an Descending Order</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    for(int i = 0; i < n - 1; i++) {
+        int maxIndex = i;
+        for(int j = i + 1; j < n; j++) {
+            if(a[j] > a[maxIndex]) {
+                maxIndex = j;
+            }
+        }
+        int temp = a[i];
+        a[i] = a[maxIndex];
+        a[maxIndex] = temp;
+    }
+
+    cout << "Array sorted in descending order: ";
+    for(int i = 0; i < n; i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 12
+4
+Array sorted in descending order: 12 4 
+   </code></pre>
+</div>
+
+<div class="question">
+    <p>Q43:Write a C++ Program to Search Key Elements in an Array</p>
+    <button onclick="toggle(this)">Show Answer</button>
+<pre class="answer"><code>
+#include&lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int n;
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    int a[n];
+    cout << "Enter elements: ";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+
+    int key;
+    cout << "Enter key element to search: ";
+    cin >> key;
+
+    bool found = false;
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] == key)
+        {
+            cout << "Element " << key << " found at index " << i << " (position " << i + 1 << ")" << endl;
+            found = true;
+        }
+    }
+
+    if (!found)
+    {
+        cout << "Element " << key << " not found in the array." << endl;
+    }
+
+    return 0;
+}
+
+OUTPUT:
+Enter number of elements: 2
+Enter elements: 2
+12
+Enter key element to search: 2
+Element 2 found at index 0 (position 1)
+   </code></pre>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
